@@ -152,7 +152,43 @@ extern char* CR_getRawChunkBody(char* uri);
     return string;
 }
 
+
+/* charset converting */
+#define ICONV_BYTES(a) ((a)*6+1)
+
 extern char* CR_charsetToUTF8(char* string)
 {
-    //
+	iconv_t to_utf;
+	
+	if( (to_utf = iconv_open("UTF-8","EUC-KR") ) == (iconv_t)-1 ){
+		utf_error:
+		fprintf(stderr, "%s :: Converting to UTF-8 failed. \n", __FUNC__);
+		iconv_close(to_utf);
+		return NULL;
+	} else {
+		size_t in_bytes = strlen(string), last_bytes;
+		size_t out_bytes = ICONV_BYTES(in_bytes);
+
+		char* out = (char*)malloc(ICONV_BYTES(in_BYTES);
+		char* outp = out;
+
+		// loop
+		do{
+			int n;
+			
+			last_bytes = in_bytes;
+			n = iconv(to_utf, char(**)&str, &in_bytes, &outp, &out_bytes);
+			if( n < 0 ){
+				if(errno == EISLEQ || errno == EINVAL){
+					str++;	//skip broken byte
+					in_bytes--;
+				} else {
+					goto utf8_error;
+				}
+			}
+		} while(in_bytes > 0 && (in_bytes < last_bytes) );
+		iconv_close(to_utf);
+		*outp = '\0';
+		return out;
+	}
 }
