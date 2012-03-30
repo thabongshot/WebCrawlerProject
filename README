@@ -13,3 +13,8 @@ Readme file push test.
 	from the library.
 
 2. Some modules are added.
+
+
+
+-lpthread
+-liconv

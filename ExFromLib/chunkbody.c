@@ -3,7 +3,7 @@
 **	
 **	Other libwww samples can be found at "http://www.w3.org/Library/Examples"
 **	
-**	Copyright (c© 1995-1998 World Wide Web Consortium, (Massachusetts
+**	Copyright (cï¿½ 1995-1998 World Wide Web Consortium, (Massachusetts
 **	Institute of Technology, Institut National de Recherche en
 **	Informatique et en Automatique, Keio University). All Rights
 **	Reserved. This program is distributed under the W3C's Software
