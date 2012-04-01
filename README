@@ -2,17 +2,9 @@ README
 
 This is thabongshot's web crawler project.
 
-Thabongshot uses WWW Library. See http://w3.org/Library
+Library libcurl is used.
 
 Readme file push test.
-
-
-
-
-1. This program is based from chunkbody.c which is the example source code
-	from the library.
-
-2. Some modules are added.
 
 
 

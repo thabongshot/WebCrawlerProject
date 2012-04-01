@@ -1,8 +1,6 @@
 /*
  * Web Crawler
  *
- * Functions of Working Set of  Getting Chunk
- * Based on chunkbody.c ( W3 Library Example )
  * >> Get chunkbody
  * >> Convert into UTF-8
  * >> Save to memory
@@ -25,7 +23,7 @@ extern char* CR_getChunkBodyMain(char* uri);
 
 /*
  * Getting Chunk Body Function
- * Based from chunkbody.c (from W3 Library Example)
+ * Uses libcurl here.
  * Returns raw chunkbody string
  */
 
