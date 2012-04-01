@@ -15,6 +15,8 @@
 #include <stdlib.h>
 #include <iconv.h>
 
+#include <curl/curl.h>
+
 #include "CR_getchunk.h"
 
 

@@ -10,3 +10,4 @@ Readme file push test.
 
 -lpthread
 -liconv
+-lcurl
