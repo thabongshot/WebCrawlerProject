@@ -107,6 +107,9 @@ extern char* CR_getChunkBodyMain(const char* uri)
 
     chunkRaw = CR_getRawChunkBody(uri);
     return chunkRaw;
+
+
+// charset converting temporarily deprecated.
 /*
     chunkCnvd = CR_charsetToUTF8(chunkRaw);
 

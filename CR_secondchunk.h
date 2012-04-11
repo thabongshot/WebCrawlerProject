@@ -9,4 +9,11 @@
  *
  */
 
+typedef struct TagSet2 {
+        char* url;              // secondly filtered hyperlink
+        char* title;            // title of the hyperlink
+        char* keyword;          // what the title contains
+        char* contents;         // contents of the hyperlink
+} SecondSet;
+
 
