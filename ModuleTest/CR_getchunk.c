@@ -2,7 +2,7 @@
  * Web Crawler
  *
  * Functions of Working Set of  Getting Chunk
- * Based on chunkbody.c ( W3 Library Example )
+ * uses libcurl
  * >> Get chunkbody
  * >> Convert into UTF-8
  * >> Save to memory
@@ -13,165 +13,135 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <iconv.h>
+#include <errno.h>
 
-#include "WWWLib.h"
-#include "WWWHTTP.h"
-#include "WWWInit.h"
+#include <curl/curl.h>
 
 #include "CR_getchunk.h"
 
 
-PRIVATE int printer (const char * fmt, va_list pArgs)
-{
-    return (vfprintf(stdout, fmt, pArgs));
-}
+/***************************************************************************
+ *                                  _   _ ____  _
+ *  Project                     ___| | | |  _ \| |
+ *                             / __| | | | |_) | |
+ *                            | (__| |_| |  _ <| |___
+ *                             \___|\___/|_| \_\_____|
+ *
+ * Copyright (C) 1998 - 2011, Daniel Stenberg, <daniel@haxx.se>, et al.
+ *
+ * This software is licensed as described in the file COPYING, which
+ * you should have received as part of this distribution. The terms
+ * are also available at http://curl.haxx.se/docs/copyright.html.
+ *
+ * You may opt to use, copy, modify, merge, publish, distribute and/or sell
+ * copies of the Software, and permit persons to whom the Software is
+ * furnished to do so, under the terms of the COPYING file.
+ *
+ * This software is distributed on an "AS IS" basis, WITHOUT WARRANTY OF ANY
+ * KIND, either express or implied.
+ *
+ ***************************************************************************/
 
-PRIVATE int tracer (const char * fmt, va_list pArgs)
-{
-    return (vfprintf(stderr, fmt, pArgs));
-}
+struct MemoryStruct {
+	char* memory;
+	size_t size;
+};
 
-PRIVATE int terminate_handler (HTRequest * request, HTResponse * response,
-                               void * param, int status) 
+static size_t WriteMemoryCallback(void* contents, size_t size, size_t nmemb, void* userp)
 {
-    /* Check for status */
-    /* HTPrint("Load resulted in status %d\n", status); */
+	size_t realsize = size * nmemb;
+	struct MemoryStruct* mem = (struct MemoryStruct*)userp;
 	
-	/* we're not handling other requests */
-	HTEventList_stopLoop ();
-    
-	/* stop here */
-    return HT_ERROR;
+	mem->memory = (char*)realloc(mem->memory, mem->size + realsize + 1);
+	if( mem->memory == NULL ){
+		/* out of memory */
+		printf("not enough memory (realloc returned NULL)\n");
+		exit(EXIT_FAILURE);
+	}
+
+	memcpy( &(mem->memory[mem->size]), contents, realsize);
+	mem->size += realsize;
+	mem->memory[mem->size] = 0;
+	
+	return realsize;
+}
+
+extern char* CR_getRawChunkBody(const char* url)
+{
+	CURL* curl_handle;
+	
+	struct MemoryStruct chunk; 
+	
+	chunk.memory = malloc(1);
+	chunk.size = 0;
+
+
+	curl_global_init(CURL_GLOBAL_ALL);
+	
+	curl_handle = curl_easy_init();
+	curl_easy_setopt(curl_handle, CURLOPT_URL, url);
+	curl_easy_setopt(curl_handle, CURLOPT_HEADER, 1);
+	curl_easy_setopt(curl_handle, CURLOPT_WRITEFUNCTION, WriteMemoryCallback);
+	curl_easy_setopt(curl_handle, CURLOPT_WRITEDATA, (void*)(&chunk) );
+	curl_easy_setopt(curl_handle, CURLOPT_USERAGENT, "libcurl-agent/1.0");
+	
+	curl_easy_perform(curl_handle);
+	
+	curl_easy_cleanup(curl_handle);
+	curl_global_cleanup();
+	
+	return chunk.memory;
 }
 
 
-extern char* CR_getChunkBodyMain(char* uri)
+/***************************************************************************
+ * 									   *
+ ***************************************************************************/
+
+extern char* CR_getChunkBodyMain(const char* uri)
 {
     char* chunkRaw=NULL;
     char* chunkCnvd=NULL;
-    
+
     chunkRaw = CR_getRawChunkBody(uri);
+    return chunkRaw;
+/*
     chunkCnvd = CR_charsetToUTF8(chunkRaw);
-    
+
+	puts("Original chunk string free test.");
     free(chunkRaw);
+	puts("Success.");
     chunkRaw = NULL;
-    
+
     return chunkCnvd;
+*/
+
 }
 
 
 
-extern char* CR_getRawChunkBody(char* uri);
-{
-    HTRequest * request = HTRequest_new();
-    HTList * converters = HTList_new();		/* List of converters */
-    HTList * encodings = HTList_new();		/* List of encoders */
-    HTChunk * chunk = NULL;
-    // char * url = argc==2 ? argv[1] : NULL;
-    
-    /* Initialize libwww core */
-    HTLibInit("Get Chunk Module", "1.0");
-    
-    /* Gotta set up our own traces */
-    HTPrint_setCallback(printer);
-    HTTrace_setCallback(tracer);
-    
-    /* Turn on TRACE so we can see what is going on */
-#if 0
-    HTSetTraceMessageMask("sop");
-#endif
-    
-    /* On windows we must always set up the eventloop */
-#ifdef WWW_WIN_ASYNC
-    HTEventInit();
-#endif
-    
-    /* Register the default set of transport protocols */
-    HTTransportInit();
-    
-    /* Register the default set of protocol modules */
-    HTProtocolInit();
-    
-    /* Register the default set of BEFORE and AFTER callback functions */
-    HTNetInit();
-    
-    /* Register the default set of converters */
-    HTConverterInit(converters);
-    HTFormat_setConversion(converters);
-    
-    /* Register the default set of transfer encoders and decoders */
-    HTTransferEncoderInit(encodings);
-    HTFormat_setTransferCoding(encodings);
-    
-    /* Register the default set of MIME header parsers */
-    HTMIMEInit();
-    
-    /* Add our own filter to handle termination */
-    HTNet_addAfter(terminate_handler, NULL, NULL, HT_ALL, HT_FILTER_LAST);
-    
-    /* Set up the request and pass it to the Library */
-    HTRequest_setOutputFormat(request, WWW_SOURCE);
-    HTRequest_setPreemptive(request, YES);
-    
-    char* string = NULL;
-    if (url) {
-        char * cwd = HTGetCurrentDirectoryURL();
-        char * absolute_url = HTParse(url, cwd, PARSE_ALL);
-        HTAnchor * anchor = HTAnchor_findAddress(absolute_url);
-        chunk = HTLoadAnchorToChunk(anchor, request);
-        HT_FREE(absolute_url);
-        HT_FREE(cwd);
-        
-        /* If chunk != NULL then we have the data */
-        if (chunk) {
-            //char * string;
-            /* wait until the request is over */
-            HTEventList_loop (request);
-            string = HTChunk_toCString(chunk);
-            //HTPrint("%s", string ? string : "no text");
-            //HT_FREE(string);
-            
-        }
-    } else {
-        HTPrint("No uri string in.\n");
-    }
-    
-    /* Clean up the request */
-    HTRequest_delete(request);
-    HTFormat_deleteAll();
-    
-    /* On windows, shut down eventloop as well */
-#ifdef WWW_WIN_ASYNC
-    HTEventTerminate();
-#endif
-    
-    /* Terminate the Library */
-    HTLibTerminate();
-    
-    return string;
-}
+/***************************************************************************
+ *       Charset converting function. iconv()                              *
+ ***************************************************************************/
 
-
-
-/* charset converting */
 #define ICONV_BYTES(a) ((a)*6+1)
-
 /***** gotta solve string limit problem.  *****/
 extern char* CR_charsetToUTF8(char* string)
 {
 	iconv_t to_utf;
 	
 	if( (to_utf = iconv_open("UTF-8","EUC-KR") ) == (iconv_t)-1 ){
-		utf_error:
-		fprintf(stderr, "%s :: Converting to UTF-8 failed. \n", __FUNC__);
+		utf8_error:
+		fprintf(stderr, "%s :: Converting to UTF-8 failed. \n", __FUNCTION__);
 		iconv_close(to_utf);
 		return NULL;
 	} else {
 		size_t in_bytes = strlen(string), last_bytes;
 		size_t out_bytes = ICONV_BYTES(in_bytes);
 
-		char* out = (char*)malloc(ICONV_BYTES(in_BYTES);
+		char* out = (char*)malloc(ICONV_BYTES(in_bytes) );
 		char* outp = out;
 
 		// loop
@@ -179,10 +149,10 @@ extern char* CR_charsetToUTF8(char* string)
 			int n;
 			
 			last_bytes = in_bytes;
-			n = iconv(to_utf, char(**)&str, &in_bytes, &outp, &out_bytes);
+			n = iconv(to_utf, (char**)&string, &in_bytes, &outp, &out_bytes);
 			if( n < 0 ){
-				if(errno == EISLEQ || errno == EINVAL){
-					str++;	//skip broken byte
+				if(errno == EILSEQ || errno == EINVAL){
+					string++;	//skip broken byte
 					in_bytes--;
 				} else {
 					goto utf8_error;
