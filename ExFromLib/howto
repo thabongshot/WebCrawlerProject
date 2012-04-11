@@ -1,9 +1,0 @@
-gcc -o out sepheaders.o $(curl-config --libs)
-
-
- gcc -c sepheaders.c $(curl-config --cflags)
-
-
-
-
-http://curl.haxx.se/
