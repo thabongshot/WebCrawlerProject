@@ -17,7 +17,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "CR_BoyerMoore.h"
 
 
 #ifndef FREE(a)
@@ -68,17 +67,14 @@ typedef struct TagSet3Node
  ********************************************************/
 
 //Set1Node* CR_CreateSet1Node(const char* rooturl);
-extern void* CR_AllocSetNode(int setNum);
-extern void CR_DestroySetNode(int setNum, void* node);
+void* CR_AllocSetNode(int setNum);
+void CR_DestroySetNode(int setNum, void* node);
 
 
-/********************************************************
- *	>> hyperlink filtering				*
- *	>> module body					*
- ********************************************************/
-
-
-
+/**********************************************************
+ *	>> hyperlink filtering				  *
+ *	>> module body					  *
+ *********************************************************/
 
 
 

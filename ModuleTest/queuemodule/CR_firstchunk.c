@@ -6,7 +6,7 @@
  *	functions for data structure		*
  ************************************************/
 
-extern void* CR_AllocSetNode(int setNum)
+void* CR_AllocSetNode(int setNum)
 {
 
 	if( setNum == 1 ){
@@ -42,7 +42,7 @@ extern void* CR_AllocSetNode(int setNum)
 	}
 }
 
-extern void CR_DestroySetNode(int setNum, void* node)
+void CR_DestroySetNode(int setNum, void* node)
 {
 	if( setNum == 1){
 
@@ -74,11 +74,3 @@ extern void CR_DestroySetNode(int setNum, void* node)
 		exit(1);
 	}
 }
-
-/************************************************
- *	functions for hyperlink filtering	*
- ************************************************/
-
-
-
-

@@ -14,6 +14,6 @@ typedef struct TagSet2 {
         char* title;            // title of the hyperlink
         char* keyword;          // what the title contains
         char* contents;         // contents of the hyperlink
-} SecondSet;
+} Set3Node;
 
 
