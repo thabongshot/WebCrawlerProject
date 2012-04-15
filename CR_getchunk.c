@@ -14,7 +14,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <iconv.h>
 #include <errno.h>
 
 #include <curl/curl.h>
@@ -131,6 +130,7 @@ extern char* CR_getChunkBodyMain(const char* uri)
 
 #define ICONV_BYTES(a) ((a)*6+1)
 /***** gotta solve string limit problem.  *****/
+/*
 extern char* CR_charsetToUTF8(char* string)
 {
 	iconv_t to_utf;
@@ -168,3 +168,4 @@ extern char* CR_charsetToUTF8(char* string)
 		return out;
 	}
 }
+*/

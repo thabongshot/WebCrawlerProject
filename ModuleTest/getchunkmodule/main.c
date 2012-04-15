@@ -5,7 +5,8 @@
 #include "CR_getchunk.h"
 
 
-
+// 오오미 손가락이 정화되는 키보드당 ㅎㅎ
+// 재환이형 멋져요 ㅎㅎ
 
 int main(int argc, char** argv)
 {

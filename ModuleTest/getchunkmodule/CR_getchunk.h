@@ -37,4 +37,4 @@ extern char* CR_getRawChunkBody(const char* uri);
  * Returns UTF-8 converted string
  */
 
-extern char* CR_charsetToUTF8(char* string);
+//extern char* CR_charsetToUTF8(char* string);
