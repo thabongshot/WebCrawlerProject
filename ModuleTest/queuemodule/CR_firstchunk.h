@@ -19,9 +19,7 @@
 #include <string.h>
 
 
-#ifndef FREE(a)
 #define FREE(a) {free(a);a=NULL;}
-#endif
 
 /**********************************************************
  *	Data Structure					  *
@@ -78,5 +76,5 @@ void CR_DestroySetNode(int setNum, void* node);
 
 
 
-#endif CR_FIRSTCHUNK_H
+#endif
 

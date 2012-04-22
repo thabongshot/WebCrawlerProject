@@ -10,7 +10,7 @@
 int main(int argc, char** argv)
 {
 	int i=0;
-	Set3Node* arr[3];
+	Set3Node* arr[100000];
 	Set3Node* tmp = NULL;
 	LinkedQueue* queue = NULL;
 	QNode* deqd = NULL;
@@ -23,19 +23,19 @@ int main(int argc, char** argv)
 
 
 	puts("Make 3 Nodes ...");
-	for(i=0; i<3; i++){
+	for(i=0; i<100000; i++){
 		arr[i] = (Set3Node*)CR_AllocSetNode(SET3);
 	}
 	puts("Success.");puts("");
 	
 	puts("Enqueue ...");
-	for(i=0; i<3; i++){
+	for(i=0; i<100000; i++){
 		CR_Enqueue(queue, CR_CreateQNode( (void*)arr[i] ) );
 	}
 	puts("Success.");puts(""); 
 
 	puts("Dequeue and Destroy ...");
-	for(i=0; i<3; i++){
+	for(i=0; i<100000; i++){
 		deqd = CR_Dequeue(queue);
 		tmp = (Set3Node*)(deqd->dataNode);
 		printf("%x", tmp->rooturl );
