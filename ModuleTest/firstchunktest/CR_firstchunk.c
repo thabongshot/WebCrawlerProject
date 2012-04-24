@@ -125,6 +125,7 @@ static void CR_HyperlinkFilter( Set2Node* inputSet2, LinkedQueue* set3Queue)
 	
 	// code
 	tag_start = inputSet2->chunk;
+	
 	while( (tag_start = (char*)strcasestr(tag_start, "<a ")) != NULL ){
 
 		/* get one tag's addresses */
@@ -142,16 +143,22 @@ static void CR_HyperlinkFilter( Set2Node* inputSet2, LinkedQueue* set3Queue)
 		
 		/* get URL string */
 		CR_gethref(strbuffer, tagbuffer);
-		new3Node->url = CR_genstr(strbuffer);
+		if( strbuffer[0] != '\0' )
+			new3Node->url = CR_genstr(strbuffer);
 		memset(strbuffer, 0, BUF_SIZE);
-
+		
 		/* get title string */
 		CR_gettitle(strbuffer, tagbuffer);
-		new3Node->title = CR_genstr(strbuffer);
+		if( strbuffer[0] != '\0' )
+			new3Node->title = CR_genstr(strbuffer);
 		memset(strbuffer, 0, BUF_SIZE);
 
 		/* now new3Node has rooturl, url, title */
-		CR_Enqueue(set3Queue, CR_CreateQNode((void*)new3Node) );
+		if( new3Node->url != NULL && new3Node->title != NULL)
+			CR_Enqueue(set3Queue, CR_CreateQNode((void*)new3Node) );
+		else
+			CR_DestroySetNode(SET3, new3Node);
+
 		new3Node = NULL;
 
 		/* for next tag */
@@ -164,22 +171,22 @@ static void CR_HyperlinkFilter( Set2Node* inputSet2, LinkedQueue* set3Queue)
 
 static void CR_gethref(char* dest, char* src)
 {
-	int i;
+	int i = 0;
 
 	src = (char*)strcasestr( src, "href=" );
-	
+
 	if( src ){
+		
 		src = &src[5];
+		while( *src != ' ' && *src != '>'){
+                	if( *src != '\'' && *src != '\"' ){
+                        	dest[i++] = *src;
+                	}
+                	src++;
+        	}
 	}
 
-	i=0;
-	while( *src != ' ' && *src != '>' ){
-		if( *src != '\'' && *src != '\"' ){
-			dest[i++] = *src;
-		}
-		src++;
-	}
-	dest[i] = '\0';
+        dest[i] = '\0';
 }
 
 static void CR_gettitle(char* dest, char* src)

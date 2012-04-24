@@ -50,9 +50,7 @@ extern void CR_SecondChunkBody( /* put args here*/ );
  *********************************************************/
 
 extern void CR_TagRemover( char* chunk );
-
 static void CR_makeblank(char* buf, char* str);
-
 static unsigned long int CR_stringhash(const unsigned char* str);
 
 
