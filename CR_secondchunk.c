@@ -91,16 +91,6 @@ static void CR_makeblank(char* buf, char* str)
 
 			break;
 
-		// hash value of tag "<a" & "</a>"
-		case 254:
-			// do nothing
-			break;
-		case 693:
-			// do nothing
-			break;
-
-
-		// other tags
 		default:
 			while( *str != '>' ) *str++ = ' ';
 			
