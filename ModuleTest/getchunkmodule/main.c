@@ -26,9 +26,17 @@ int main(int argc, char** argv)
 
 	//CR_getChunkBodyMain(url);
 	string = CR_getChunkBodyMain(argv[1]);
-	printf("%s",string);
+//	printf("%s",string);
 	puts("");
 	printf("string from CR_getChunkBodyMain :: %d\n", strlen(string) );
+	puts("");
+	
+	int i,j;
+	for(i=0,j=0; i<20; j++){
+		putchar(string[j]);
+		if(string[j] == '\n') i++;
+	}
+	puts("");
 
 	return 0;
 }

@@ -112,7 +112,7 @@ extern char* CR_getChunkBodyMain(const char* url)
 	chunkRaw = CR_getRawChunkBody(url);
 	
 	/* header HTTP/1.1 repond check */
-	CR_okCheck( chunkRaw );
+	CR_okCheck( &chunkRaw );
 
 	/* header charset check */
 	result = CR_charsetCheck( chunkRaw );
@@ -121,26 +121,27 @@ extern char* CR_getChunkBodyMain(const char* url)
 
 }
 
-static void CR_okCheck( char* str )
+static void CR_okCheck( char** str )
 {
 	int i;
 	char buf_resp[30];
 	char buf_url[100];
 	char* tmp = NULL;
 	
+	memset(buf_resp,0,30);
+	memset(buf_url,0,100);	
 
 	/* find HTTP/1.1 response result */
-	if( (tmp=strstr(str, "HTTP/1.1")) != NULL){
+	if( (tmp=strstr(*str, "HTTP/1.1")) != NULL){
 		i=0;
-		memset(buf_resp,0,30);
-		while( *tmp++ != ' ' ){printf("");}
+		while( *tmp++ != ' ' ){}
 		while( *tmp != ' ' ){
 			buf_resp[i++] = *tmp++;
 		}
 		buf_resp[i] = '\0';
-//printf("%s::LINE%d::buf[ %s ]\n",__FUNCTION__,__LINE__,buf_resp);
 	}
 
+printf("%s::LINE%d::buf[ %s ]\n",__FUNCTION__,__LINE__,buf_resp);
 
 	/* reponse condition */
 	if( strcmp(buf_resp, "200") == 0 ){
@@ -150,22 +151,22 @@ static void CR_okCheck( char* str )
 		// if HTTP/1.1 301 Moved Permanently then
 		// find => Location: "url"
 		// return CR_getChunkBodyMain(url)
-		if( (tmp=strstr(str, "Location:")) != NULL ){
+		if( (tmp=strstr(*str, "Location:")) != NULL ){
 			i=0;
-			memset(buf_url, 0, 100);
 			while( *tmp++ != ' ' ){}
-			while( *tmp != '\n' && *tmp != 13 ){
+			while( *tmp != ' ' && *tmp != '\0' ){
 				buf_url[i++] = *tmp++;
 			}
 			buf_url[i] = '\0';
-//printf("%s::LINE%d::buf_url[ %s ]\n",__FUNCTION__,__LINE__,buf_url);
-printf("[Notice] :: HTTP/1.1 301 Moved Permanently. Try [ %s ]\n",buf_url);
 		}
+printf("%s::LINE%d::buf[ %s ]\n",__FUNCTION__,__LINE__,buf_url);
+		free(*str); 
+		*str=NULL;
+		*str = CR_getChunkBodyMain(buf_url);
 
-		memset(str, 0, strlen(str) );
 	} else {
 		// if HTTP/1.1 'else' then nulify string
-		memset(str, 0, strlen(str) );
+		memset(*str, 0, strlen(*str) );
 	}
 }
 
@@ -178,24 +179,22 @@ static char* CR_charsetCheck( char* str )
 
 	if( (tmp=strstr(str,"charset=")) != NULL ){
 		i=0;
-		memset(buf_chset,0,100);
 		tmp += 8;
 		while( *tmp != '\n' && *tmp != ' '){
 			buf_chset[i++] = *tmp++;
 		}
 		buf_chset[i] = '\0';
 	}
-//printf("%s::LINE%d::buf[ %s ]\n",__FUNCTION__,__LINE__,buf_chset);
+printf("%s::LINE%d::buf[ %s ]\n",__FUNCTION__,__LINE__,buf_chset);
 
 	if( strcasestr(buf_chset, "euc") != NULL &&
 		strcasestr(buf_chset, "kr") != NULL ){
 			convd = NULL;
-			memset(buf_chset,0,100);
 			convd = CR_charsetToUTF8(str);
 			return convd;
 	} 
 
-//printf("%s::LINE%d::buf[ %s ]\n",__FUNCTION__,__LINE__,buf_chset);
+printf("%s::LINE%d::buf[ %s ]\n",__FUNCTION__,__LINE__,buf_chset);
 	return str;
 }
 
