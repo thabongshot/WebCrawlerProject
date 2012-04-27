@@ -14,8 +14,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-//include <iconv.h>
 #include <errno.h>
+#include <iconv.h>
 
 #include <curl/curl.h>
 
@@ -100,26 +100,104 @@ extern char* CR_getRawChunkBody(const char* url)
  * 									   *
  ***************************************************************************/
 
-extern char* CR_getChunkBodyMain(const char* uri)
+extern char* CR_getChunkBodyMain(const char* url)
 {
-    char* chunkRaw=NULL;
-    char* chunkCnvd=NULL;
+	int i;
+	char* buf;
+	char* tmp;
+	char* chunkRaw=NULL;
+	char* result=NULL;
+	
+	/* main URL get part */
+	chunkRaw = CR_getRawChunkBody(url);
+	
+	/* header HTTP/1.1 repond check */
+	CR_okCheck( chunkRaw );
 
-    chunkRaw = CR_getRawChunkBody(uri);
-    return chunkRaw;
-/*
-    chunkCnvd = CR_charsetToUTF8(chunkRaw);
+	/* header charset check */
+	result = CR_charsetCheck( chunkRaw );
 
-	puts("Original chunk string free test.");
-    free(chunkRaw);
-	puts("Success.");
-    chunkRaw = NULL;
-
-    return chunkCnvd;
-*/
+	return result;
 
 }
 
+static void CR_okCheck( char* str )
+{
+	int i;
+	char buf_resp[30];
+	char buf_url[100];
+	char* tmp = NULL;
+	
+
+	/* find HTTP/1.1 response result */
+	if( (tmp=strstr(str, "HTTP/1.1")) != NULL){
+		i=0;
+		memset(buf_resp,0,30);
+		while( *tmp++ != ' ' ){printf("");}
+		while( *tmp != ' ' ){
+			buf_resp[i++] = *tmp++;
+		}
+		buf_resp[i] = '\0';
+//printf("%s::LINE%d::buf[ %s ]\n",__FUNCTION__,__LINE__,buf_resp);
+	}
+
+
+	/* reponse condition */
+	if( strcmp(buf_resp, "200") == 0 ){
+		// if HTTP/1.1 200 OK , then do nothing
+
+	} else if( strcmp(buf_resp, "301") == 0 ){
+		// if HTTP/1.1 301 Moved Permanently then
+		// find => Location: "url"
+		// return CR_getChunkBodyMain(url)
+		if( (tmp=strstr(str, "Location:")) != NULL ){
+			i=0;
+			memset(buf_url, 0, 100);
+			while( *tmp++ != ' ' ){}
+			while( *tmp != '\n' && *tmp != 13 ){
+				buf_url[i++] = *tmp++;
+			}
+			buf_url[i] = '\0';
+//printf("%s::LINE%d::buf_url[ %s ]\n",__FUNCTION__,__LINE__,buf_url);
+printf("[Notice] :: HTTP/1.1 301 Moved Permanently. Try [ %s ]\n",buf_url);
+		}
+
+		memset(str, 0, strlen(str) );
+	} else {
+		// if HTTP/1.1 'else' then nulify string
+		memset(str, 0, strlen(str) );
+	}
+}
+
+static char* CR_charsetCheck( char* str )
+{
+	int i;
+	char* tmp;
+	char* convd;
+	char buf_chset[100];
+
+	if( (tmp=strstr(str,"charset=")) != NULL ){
+		i=0;
+		memset(buf_chset,0,100);
+		tmp += 8;
+		while( *tmp != '\n' && *tmp != ' '){
+			buf_chset[i++] = *tmp++;
+		}
+		buf_chset[i] = '\0';
+	}
+//printf("%s::LINE%d::buf[ %s ]\n",__FUNCTION__,__LINE__,buf_chset);
+
+	if( strcasestr(buf_chset, "euc") != NULL &&
+		strcasestr(buf_chset, "kr") != NULL ){
+			convd = NULL;
+			memset(buf_chset,0,100);
+			convd = CR_charsetToUTF8(str);
+			return convd;
+	} 
+
+//printf("%s::LINE%d::buf[ %s ]\n",__FUNCTION__,__LINE__,buf_chset);
+	return str;
+}
 
 
 /***************************************************************************
@@ -127,8 +205,9 @@ extern char* CR_getChunkBodyMain(const char* uri)
  ***************************************************************************/
 
 #define ICONV_BYTES(a) ((a)*6+1)
-/*
-extern char* CR_charsetToUTF8(char* string)
+/***** gotta solve string limit problem.  *****/
+
+static char* CR_charsetToUTF8(char* string)
 {
 	iconv_t to_utf;
 	
@@ -165,4 +244,4 @@ extern char* CR_charsetToUTF8(char* string)
 		return out;
 	}
 }
-*/
+

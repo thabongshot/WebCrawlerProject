@@ -18,6 +18,15 @@ extern void CR_SecondChunkBody( /* put args here */ )
 
 
 /**********************************************************
+ *      Sentence make function                            *
+ *********************************************************/
+static void CR_sentencemaker(char* str)
+{
+	
+}
+
+
+/**********************************************************
  *      HTML Tag Remover Module                           *
  *      Set of 3 functions                                *
  *      Second Chunk                                      *
@@ -90,6 +99,11 @@ static void CR_makeblank(char* buf, char* str)
 			while( str <= tag_end ) *str++ = ' ';
 
 			break;
+
+		// hash value of tag "<div" & "/div>"
+		// do nothing
+		//case 1047: break;
+		//case 1344: break;
 
 		default:
 			while( *str != '>' ) *str++ = ' ';

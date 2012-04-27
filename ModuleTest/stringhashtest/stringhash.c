@@ -23,7 +23,9 @@ int main()
 	printf("<script :: %lu \n", CR_stringhash("<script"));
 	printf("<style :: %lu \n" , CR_stringhash("<style"));
 	printf("<a :: %lu \n" , CR_stringhash("<a") );
-	printf("</a> :: %lu \n", CR_stringhash("</a>") );
+	printf("</a :: %lu \n", CR_stringhash("</a") );
+	printf("<div :: %lu \n", CR_stringhash("<div") );
+	printf("/div :: %lu \n", CR_stringhash("</div") );
 
 	return 0;
 }

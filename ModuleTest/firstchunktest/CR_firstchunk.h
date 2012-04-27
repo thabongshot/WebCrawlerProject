@@ -85,4 +85,12 @@ static void CR_gettitle(char* dest, char* src);
 
 static char* CR_genstr(char* buf);
 
+
+static void CR_TagRemover( char* chunk );
+
+static void CR_makeblank(char* buf, char* str);
+
+static unsigned long int CR_stringhash(const unsigned char* str);
+
+
 #endif

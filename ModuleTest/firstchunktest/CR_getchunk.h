@@ -21,6 +21,7 @@
 extern char* CR_getChunkBodyMain(const char* uri);
 
 
+
 /*
  * Getting Chunk Body Function
  * Uses libcurl here.
@@ -28,6 +29,9 @@ extern char* CR_getChunkBodyMain(const char* uri);
  */
 
 extern char* CR_getRawChunkBody(const char* uri);
+
+static void CR_okCheck( char* str );
+static char* CR_charsetCheck( char* str );
 
 
 /*
@@ -37,4 +41,6 @@ extern char* CR_getRawChunkBody(const char* uri);
  * Returns UTF-8 converted string
  */
 
-//extern char* CR_charsetToUTF8(char* string);
+static char* CR_charsetToUTF8(char* string);
+
+

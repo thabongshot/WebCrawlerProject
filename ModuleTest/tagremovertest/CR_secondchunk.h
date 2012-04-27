@@ -44,6 +44,12 @@ extern void CR_SecondChunkBody( /* put args here*/ );
 
 
 /**********************************************************
+ *      Sentence make function                            *
+ *********************************************************/
+static void CR_sentencemaker(char* str);
+
+
+/**********************************************************
  *      HTML Tag Remover Module                           *
  *	Set of 3 functions				  *
  *      Second Chunk                                      *
@@ -54,7 +60,6 @@ extern void CR_TagRemover( char* chunk );
 static void CR_makeblank(char* buf, char* str);
 
 static unsigned long int CR_stringhash(const unsigned char* str);
-
 
 
 #endif
