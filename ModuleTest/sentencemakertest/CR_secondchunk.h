@@ -17,7 +17,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "CR_Qmaker.h"
 
 
 
@@ -47,7 +46,7 @@ extern void CR_SecondChunkBody( Set4Node* inNode );
 /**********************************************************
  *      Sentence make function                            *
  *********************************************************/
-static char* CR_sentencemaker(char* str, char* keyword);
+extern char* CR_sentencemaker(char* str, char* keyword);
 static int CR_strlen(const char* str);
 
 
