@@ -162,31 +162,22 @@ printf("Choose 2nd getchunk candidates ... ");
 		if( !CR_IsVisited(s3node->url) && 
 			CR_TitleHasWord(s3node->title) ){
 				// do getchunk
-printf("alloc set 4 node ...\n");
 				s4node = CR_AllocSet4Node(s3node);
-
-printf("s4node::rturl:: [ %s ]\n", s4node->rooturl);
-printf("s4node::url:: [ %s ]\n", s4node->url);
-printf("s4node::title:: [ %s ]\n", s4node->title);
 
 				if(s4list == NULL){
 					s4list = s4node;
 				} else {
-puts("move to the end of s4list");
 					s4tmp = s4list;
 					while(s4tmp->next != NULL){
 						s4tmp = s4tmp->next;
 						printf("");printf("");
 					}
-puts("append ...");
 					s4tmp->next = s4node;
 				}	
 				
-puts("get chunk ...");
 				s4node->contents = CR_getChunkBodyMain(s4node->url);
 				CR_AddVisitlist(s4node->url);
 		}
-printf("LINE::%d\n",__LINE__);
 		CR_DestroySetNode(SET3, s3node);
 	}
 
@@ -223,7 +214,8 @@ Set4Node* CR_AllocSet4Node(Set3Node* in)
 	strcpy(newNode->rooturl, in->rooturl);
 	strcpy(newNode->url, in->url);
 	strcpy(newNode->title, in->title);
-
+	
+	newNode->next = NULL;
 	return newNode;
 }
 
