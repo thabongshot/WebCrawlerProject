@@ -18,8 +18,8 @@ extern void CR_SecondChunkBody( Set4Node* inNode )
 	keyword = inNode->keyword;
 	str_chunk = inNode->contents;
 
-	tag_removed = CR_TagRemover(str_chunk);
-	result = CR_sentencemaker(tag_removed, keyword);
+	CR_TagRemover(str_chunk);
+	result = CR_sentencemaker(str_chunk, keyword);
 
 	free(tag_removed);
 	tag_removed = NULL;
@@ -32,7 +32,7 @@ extern void CR_SecondChunkBody( Set4Node* inNode )
 /**********************************************************
  *      Sentence make function                            *
  *********************************************************/
-static char* CR_sentencemaker( char* str, char* keyword)
+extern char* CR_sentencemaker( char* str, char* keyword)
 {
 	int i;
 	int j;
@@ -53,23 +53,30 @@ static char* CR_sentencemaker( char* str, char* keyword)
 
 	len_cand = 0;
 	len_tmp  = 0;
-
+	i=0;
+	j=0;
 	while( *str != '\0' ){
-		
-		if( *str == '\n' ) i++;
-		else 		   i=0;
+
+		if( *str == '\n' ){
+			i++;
+		} else {
+			i=0;
+		}
 
 		if( i > 1 ){
-			buf_tmp[j] = '\0';
+			buf_tmp[j++] = '\0';
+			buf_tmp[j++] = '\0';
 			len_tmp = CR_strlen(buf_tmp);
-
-			if( len_cand < len_tmp && strcasestr(buf_tmp, keyword) ){
+			printf("%d::len\n",len_tmp);
+			if( len_cand < len_tmp && strcasestr(buf_tmp, keyword) != NULL ){
+				buf_tmp[j++] = '\0';
 				memset(buf_cand, 0, len_max);
 				strcpy(buf_cand, buf_tmp);
-				len_cand = len_buf;
-				i=0;
-				j=0;
+				len_cand = len_tmp;
 			}
+			memset(buf_tmp, 0, len_max);
+			i=0;
+			j=0;
 		}
 
 		buf_tmp[j++] = *str++;
@@ -81,12 +88,13 @@ static char* CR_sentencemaker( char* str, char* keyword)
 
 static int CR_strlen(const char* str)
 {
+	int i=0;
 	int cnt = 0;
-	while( *str != '\0' ){
-		if( str != '\n' && *str != ' ' ){
+	while( str[i] != '\0' ){
+		if( str[i] != '\n' && str[i] != ' ' ){
 			cnt++;
-			str++;
 		}
+		i++;
 	}
 	
 	return cnt;
