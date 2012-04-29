@@ -3,16 +3,28 @@
 
 
 
-
-
 /**********************************************************
  *      Functions for                                     *
  *      Second Chunk                                      *
  *********************************************************/
 
-extern void CR_SecondChunkBody( /* put args here */ )
+extern void CR_SecondChunkBody( Set4Node* inNode )
 {
+	char* keyword = NULL;
+	char* str_chunk = NULL;
+	char* tag_removed = NULL;
+	char* result = NULL;
 
+	keyword = inNode->keyword;
+	str_chunk = inNode->contents;
+
+	tag_removed = CR_TagRemover(str_chunk);
+	result = CR_sentencemaker(tag_removed, keyword);
+
+	free(tag_removed);
+	tag_removed = NULL;
+	
+	inNode->contents = result;
 }
 
 
@@ -20,9 +32,64 @@ extern void CR_SecondChunkBody( /* put args here */ )
 /**********************************************************
  *      Sentence make function                            *
  *********************************************************/
-static void CR_sentencemaker(char* str)
+static char* CR_sentencemaker( char* str, char* keyword)
 {
+	int i;
+	int j;
 	
+	int len_max;	
+	int len_cand;
+	int len_tmp;
+
+	char* buf_cand = NULL;
+	char* buf_tmp  = NULL;
+
+	len_max = strlen(str);
+	buf_cand = (char*)malloc(sizeof(char)*len_max);
+	buf_tmp  = (char*)malloc(sizeof(char)*len_max);
+	memset(buf_cand, 0, len_max);
+	memset(buf_tmp, 0, len_max);
+
+
+	len_cand = 0;
+	len_tmp  = 0;
+
+	while( *str != '\0' ){
+		
+		if( *str == '\n' ) i++;
+		else 		   i=0;
+
+		if( i > 1 ){
+			buf_tmp[j] = '\0';
+			len_tmp = CR_strlen(buf_tmp);
+
+			if( len_cand < len_tmp && strcasestr(buf_tmp, keyword) ){
+				memset(buf_cand, 0, len_max);
+				strcpy(buf_cand, buf_tmp);
+				len_cand = len_buf;
+				i=0;
+				j=0;
+			}
+		}
+
+		buf_tmp[j++] = *str++;
+	}
+
+	free(buf_tmp);
+	return buf_cand;
+}
+
+static int CR_strlen(const char* str)
+{
+	int cnt = 0;
+	while( *str != '\0' ){
+		if( str != '\n' && *str != ' ' ){
+			cnt++;
+			str++;
+		}
+	}
+	
+	return cnt;
 }
 
 
@@ -36,13 +103,10 @@ static void CR_TagRemover( char* chunk )
 {
 	const int BUF_SIZE = 4096 * 4;
 	int i;
-	int j;
 	char* buf;
 	char* tag_start;
 	char* tmp;
 	
-int len = strlen(chunk);
-j=0;
 	buf = (char*)malloc(sizeof(char)*BUF_SIZE);
 
 	do{

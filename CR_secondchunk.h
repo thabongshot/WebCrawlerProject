@@ -26,12 +26,13 @@
  *      for Second Chunk                                  *
  *********************************************************/
 
-typedef struct TagSet2 {
+typedef struct TagSet4 {
 	char* rooturl;		// url seed where we get chunk from
         char* url;              // secondly filtered hyperlink
         char* title;            // title of the hyperlink
         char* keyword;          // what the title contains
         char* contents;         // contents of the hyperlink
+	struct TagSet4* next;
 } Set4Node;
 
 
@@ -40,7 +41,7 @@ typedef struct TagSet2 {
  *      Functions for 		                          *
  *      Second Chunk                                      *
  *********************************************************/
-extern void CR_SecondChunkBody( /* put args here*/ );
+extern void CR_SecondChunkBody( Set4Node* inNode );
 
 
 /**********************************************************
