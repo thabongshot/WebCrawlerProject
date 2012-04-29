@@ -87,27 +87,15 @@ extern void CR_FirstChunkBody(LinkedQueue* set2Queue, LinkedQueue* set3Queue)
 	QNode* tmpQNode = NULL;
 
 	// code
-	if( !CR_IsEmpty(set2Queue) ){
-		printf("%s::",__FUNCTION__);
-		puts("set 2 Queue is not empty");
-	} else {
-		printf("%s::",__FUNCTION__);
-		puts("set 2 Queue is empty");
-	}
 
 	while( !CR_IsEmpty(set2Queue) ){
 	// set2Queue's dataNode must be Set2Node's pointer
 		tmpQNode = CR_Dequeue(set2Queue);
 		tmpSet2 = (Set2Node*)(tmpQNode->dataNode);
-		printf("%s::rooturl::%s\n",__FUNCTION__,tmpSet2->rooturl);
-		printf("%s::strlen::%d\n", __FUNCTION__, strlen(tmpSet2->chunk) );
+		//printf("%s::rooturl::%s\n",__FUNCTION__,tmpSet2->rooturl);
+		//printf("%s::strlen::%d\n", __FUNCTION__, strlen(tmpSet2->chunk) );
 
 		CR_HyperlinkFilter( tmpSet2, set3Queue );
-		if( !CR_IsEmpty(set3Queue) ){
-			printf("%s:: set 3 Queue is not empty\n",__FUNCTION__);
-		} else {
-			printf("%s:: set 3 Queue is empty\n", __FUNCTION__);
-		}
 	}
 }
 
