@@ -29,7 +29,7 @@
 	void CR_DestroyVisitlist();
 
 	void CR_AddWordlist(char* word);
-	int CR_TitleHasWord(char* title);
+	void CR_TitleKeyword(Set3Node* node);
 /*
  *
  ****************************************/
@@ -83,39 +83,39 @@ int main(int argc, char** argv)
 	memset(buf_word, 0, WORD_SIZE);
 
 	/* 1-1. read urlist, enqueue */
-puts("Queueing URLs...");
+fprintf(stderr, "Queueing URLs...\n");
 	CR_CreateQueue(&set1q);
 	while( fgets(buf_url, URL_SIZE, url) != NULL ){
 		len = strlen(buf_url);
 		buf_url[ len-1 ] = '\0';
-		printf("[Queue] : %s ...", buf_url);
+		fprintf(stderr, "[Queue] : %s ...", buf_url);
 		s1node = CR_AllocSetNode(SET1);
 		s1node->rooturl = (char*)malloc(sizeof(char)*len +1);
 		strcpy(s1node->rooturl, buf_url);
 		CR_CreateQNode( (void*)s1node );
 		CR_Enqueue(set1q, CR_CreateQNode((void*)s1node) );
 		memset(buf_url, 0, URL_SIZE);
-		printf("enqueued\n");
+		fprintf(stderr, "enqueued\n");
 	}
-puts("Queueing completed.");	
-puts("");
+fprintf(stderr, "Queueing completed.\n");	
+fprintf(stderr, "\n");
 	
 	/* 1-2. read wordlist, add list */
-puts("Making keyword list...");
+fprintf(stderr, "Making keyword list...\n");
 	while( fgets(buf_word, WORD_SIZE, keyword) != NULL ){
 		len = strlen(buf_word);
 		buf_word[ len-1 ] = '\0';
-		printf("[Wlist] : %s ...", buf_word);
+		fprintf(stderr, "[Wlist] : %s ...", buf_word);
 		CR_AddWordlist( buf_word );
 		memset(buf_word, 0, WORD_SIZE);
-		printf("added\n");
+		fprintf(stderr, "added\n");
 	}
-puts("Keyword list making completed.");
-puts("");
+fprintf(stderr, "Keyword list making completed.\n");
+fprintf(stderr, "\n");
 
 	
 	/* 2. getchunk from set 1 queue */
-printf("Dequeue set1 node and get chunk from url...");
+fprintf(stderr, "Dequeue set1 node and get chunk from url...");
 	CR_CreateQueue(&set2q);
 	while( !CR_IsEmpty(set1q) ){
 		/* A. Dequeue */
@@ -141,26 +141,25 @@ printf("Dequeue set1 node and get chunk from url...");
 		deqd = NULL;
 		s1node = NULL;
 	}
-puts("done\n");
+fprintf(stderr, "done\n");
 
 
 	/* 3. hyperlink parser, title and url filtering */
-printf("Hyperlink Parsing ...");
+fprintf(stderr, "Hyperlink Parsing ...");
 	CR_CreateQueue(&set3q);
 	CR_FirstChunkBody(set2q, set3q);
-printf(" done\n");
+fprintf(stderr, " done\n");
 
 	/* 4. title and url filtering, secondchunk */
-printf("Choose 2nd getchunk candidates ... ");
+fprintf(stderr, "Choose 2nd getchunk candidates ... ");
 	s4list = NULL;
 	while( !CR_IsEmpty(set3q) ){
 		/* A. Dequeue Set 3 Node */
 		deqd = CR_Dequeue(set3q);
 		s3node = (Set3Node*)deqd->dataNode;
-
+		CR_TitleKeyword(s3node);
 		/* B. Title and URL filtering */
-		if( !CR_IsVisited(s3node->url) && 
-			CR_TitleHasWord(s3node->title) ){
+		if( !CR_IsVisited(s3node->url) && s3node->keyword != NULL ){
 				// do getchunk
 				s4node = CR_AllocSet4Node(s3node);
 
@@ -181,10 +180,10 @@ printf("Choose 2nd getchunk candidates ... ");
 		CR_DestroySetNode(SET3, s3node);
 	}
 
-printf("done \n");
+fprintf(stderr, "done \n");
 
 	/* 5. sentence making */
-puts("making sentences ...");
+fprintf(stderr, "making sentences ... ");
 	s4tmp = s4list;
 	while( s4tmp->next != NULL ){
 		CR_SecondChunkBody(s4tmp);
@@ -192,7 +191,7 @@ puts("making sentences ...");
 		printf("");
 		printf("");
 	}
-printf(" ... sentence has made.\n");
+fprintf(stderr, "done\n");
 		
 puts(":::::::::::::::::::::::::::::::::::::::::::::::::::");
 puts(":::::::::::::::::::::::::::::::::::::::::::::::::::");
@@ -210,10 +209,12 @@ Set4Node* CR_AllocSet4Node(Set3Node* in)
 	newNode->rooturl = (char*)malloc(sizeof(char)*strlen(in->rooturl)+1);
 	newNode->url	 = (char*)malloc(sizeof(char)*strlen(in->url)+1);
 	newNode->title	 = (char*)malloc(sizeof(char)*strlen(in->title)+1);
+	newNode->keyword = (char*)malloc(sizeof(char)*strlen(in->keyword)+1);
 
 	strcpy(newNode->rooturl, in->rooturl);
 	strcpy(newNode->url, in->url);
 	strcpy(newNode->title, in->title);
+	strcpy(newNode->keyword, in->keyword);
 	
 	newNode->next = NULL;
 	return newNode;
@@ -287,15 +288,18 @@ void CR_AddWordlist(char* word)
 	rear_word++;
 }
 
-int CR_TitleHasWord(char* title)
+void CR_TitleKeyword(Set3Node* node)
 {
 	int i;
+	int len;
 
+	node->keyword = NULL;
 	for(i=0; i<rear_word; i++){
-		if( strcasestr(title, wordlist[i]) != NULL ){
-			return 1;
+		if( strcasestr(node->title, wordlist[i]) != NULL ){
+			len = strlen(wordlist[i])+1;
+			node->keyword = (char*)malloc(sizeof(char)*len);
+			memset(node->keyword, 0, len);
+			break;
 		}
 	}
-
-	return 0;
 }

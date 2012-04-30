@@ -67,7 +67,7 @@ extern char* CR_sentencemaker( char* str, char* keyword)
 			buf_tmp[j++] = '\0';
 			buf_tmp[j++] = '\0';
 			len_tmp = CR_strlen(buf_tmp);
-			printf("%d::len\n",len_tmp);
+			//printf("%d::len\n",len_tmp);
 			if( len_cand < len_tmp && strcasestr(buf_tmp, keyword) != NULL ){
 				buf_tmp[j++] = '\0';
 				memset(buf_cand, 0, len_max);
