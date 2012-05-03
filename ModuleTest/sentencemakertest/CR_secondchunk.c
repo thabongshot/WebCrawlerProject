@@ -57,7 +57,7 @@ extern char* CR_sentencemaker( char* str, char* keyword)
 	j=0;
 	while( *str != '\0' ){
 
-		if( *str == '\n' ){
+		if( *str == ' ' || *str == '\n' ){
 			i++;
 		} else {
 			i=0;
@@ -67,7 +67,7 @@ extern char* CR_sentencemaker( char* str, char* keyword)
 			buf_tmp[j++] = '\0';
 			buf_tmp[j++] = '\0';
 			len_tmp = CR_strlen(buf_tmp);
-			printf("%d::len\n",len_tmp);
+			//printf("%d::len\n",len_tmp);
 			if( len_cand < len_tmp && strcasestr(buf_tmp, keyword) != NULL ){
 				buf_tmp[j++] = '\0';
 				memset(buf_cand, 0, len_max);
@@ -107,7 +107,7 @@ static int CR_strlen(const char* str)
  *      Second Chunk                                      *
  *********************************************************/
 
-static void CR_TagRemover( char* chunk )
+extern void CR_TagRemover( char* chunk )
 {
 	const int BUF_SIZE = 4096 * 4;
 	int i;

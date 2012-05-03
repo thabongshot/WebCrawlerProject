@@ -56,7 +56,7 @@ static int CR_strlen(const char* str);
  *      Second Chunk                                      *
  *********************************************************/
 
-static void CR_TagRemover( char* chunk );
+extern void CR_TagRemover( char* chunk );
 
 static void CR_makeblank(char* buf, char* str);
 

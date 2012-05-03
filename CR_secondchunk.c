@@ -21,9 +21,8 @@ extern void CR_SecondChunkBody( Set4Node* inNode )
 	CR_TagRemover(str_chunk);
 	result = CR_sentencemaker(str_chunk, keyword);
 
-	free(tag_removed);
-	tag_removed = NULL;
-	
+	free(str_chunk);
+	str_chunk = NULL;
 	inNode->contents = result;
 }
 
@@ -57,7 +56,7 @@ extern char* CR_sentencemaker( char* str, char* keyword)
 	j=0;
 	while( *str != '\0' ){
 
-		if( *str == '\n' ){
+		if( *str == ' ' || *str == '\n' ){
 			i++;
 		} else {
 			i=0;
