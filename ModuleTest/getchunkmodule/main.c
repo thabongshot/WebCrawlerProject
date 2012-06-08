@@ -5,14 +5,15 @@
 #include "CR_getchunk.h"
 
 
-// 오오미 손가락이 정화되는 키보드당 ㅎㅎ
-// 재환이형 멋져요 ㅎㅎ
-
 int main(int argc, char** argv)
 {
-	if(argc<2) exit(1);
+	if(argc<2) 
+		exit(1);
 
 	char* string = NULL;
+	FILE* fp;
+
+	fp= fopen("result.txt", "wt");
 
 	puts("");
 	puts("*********************************************");
@@ -27,6 +28,7 @@ int main(int argc, char** argv)
 	//CR_getChunkBodyMain(url);
 	string = CR_getChunkBodyMain(argv[1]);
 	printf("%s",string);
+	fprintf(fp, "%s", string);
 	puts("");
 	printf("string from CR_getChunkBodyMain :: %d\n", strlen(string) );
 	puts("");

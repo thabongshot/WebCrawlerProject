@@ -158,12 +158,11 @@ static void CR_okCheck( char* str )
 				buf_url[i++] = *tmp++;
 			}
 			buf_url[i] = '\0';
-			//printf("%s::LINE%d::buf_url[ %s ]\n",__FUNCTION__,__LINE__,buf_url);
-			fprintf(stderr, "\n[Notice] :: HTTP/1.1 301 Moved Permanently. Try [ %s ]\n",buf_url);
+//printf("%s::LINE%d::buf_url[ %s ]\n",__FUNCTION__,__LINE__,buf_url);
+printf("[Notice] :: HTTP/1.1 301 Moved Permanently. Try [ %s ]\n",buf_url);
 		}
 
 		memset(str, 0, strlen(str) );
-
 	} else {
 		// if HTTP/1.1 'else' then nulify string
 		memset(str, 0, strlen(str) );
@@ -181,17 +180,23 @@ static char* CR_charsetCheck( char* str )
 		i=0;
 		memset(buf_chset,0,100);
 		tmp += 8;
-		while( *tmp != '\n' && *tmp != ' '){
+		while( *tmp != '\n' && *tmp != ' ' && *tmp != '\r' ){
 			buf_chset[i++] = *tmp++;
 		}
 		buf_chset[i] = '\0';
 	}
-//printf("%s::LINE%d::buf[ %s ]\n",__FUNCTION__,__LINE__,buf_chset);
+printf("%s::LINE%d::buf[ %s ]\n",__FUNCTION__,__LINE__,buf_chset);
 
 	if( strcasestr(buf_chset, "euc") != NULL &&
 		strcasestr(buf_chset, "kr") != NULL ){
 			convd = NULL;
 			memset(buf_chset,0,100);
+			convd = CR_charsetToUTF8(str);
+			return convd;
+	} else if ( strcasestr(buf_chset, "ms") != NULL &&
+		strcasestr(buf_chset, "949") != NULL ){
+			convd = NULL;
+			memset(buf_chset, 0, 100);
 			convd = CR_charsetToUTF8(str);
 			return convd;
 	} 

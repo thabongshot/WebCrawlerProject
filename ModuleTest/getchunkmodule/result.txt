@@ -1,0 +1,2306 @@
+HTTP/1.1 200 OK
+Date: Fri, 08 Jun 2012 14:24:58 GMT
+Server: Apache
+Cache-Control: no-cache
+Expires: Thu, 01 Jan 1970 00:00:00 GMT
+Set-Cookie: nci4=""; Domain=.cafe.naver.com; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/
+Set-Cookie: nci4=3c08efc3d59ef44419f7b0a7aa58275effa45ab0e4bf4d835e948f7ff66a9731a31dde05840b949ece6227f447e46fb46565684992a4c5cade2bc36fa1b62bdb958d80a786b7fb8b8aad88b9f18292b195abe6979eb99cadb5ada080a495d4d0d1d0cdcfcfcf7d; Domain=.cafe.naver.com; Path=/
+Set-Cookie: ncvid=#vid#_165.194.17.211F6a5; Domain=.cafe.naver.com; Expires=Wed, 26-Jun-2080 17:39:05 GMT; Path=/
+Set-Cookie: JSESSIONID=E1816CAFC74479DA5A7FE3C7EFC69C7A; Path=/
+P3P: CP="ALL CURa ADMa DEVa TAIa OUR BUS IND PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE LOC OTC"
+Vary: User-Agent,Accept-Encoding
+Connection: close
+Transfer-Encoding: chunked
+Content-Type: text/html;charset=ms949
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta name="robots" content="noindex, nofollow" />
+<meta http-equiv="Content-Type" content="text/html;charset=KSC5601">
+<title>카페</title>
+<link rel="stylesheet" href="/css/mycafe-common.css?1333968712000" type="text/css">
+
+<link rel="stylesheet" href="/css/mycafe-layout.css?1337594047000" type="text/css">
+
+<link rel="stylesheet" href="/css/mycafe-main.css?1337594047000" type="text/css">
+
+<link rel="stylesheet" href="/css/moz_fix.css?1333968712000" type="text/css">
+
+<link rel="stylesheet" href="/css/message_box.css?1333968712000" type="text/css">
+
+
+
+
+<script>
+var g_sUserId = "";
+var g_sGroupId = "false";
+var g_sCafeHome = "http://cafe.naver.com/" + "joonggonara";
+var g_sClubId = "10050146";
+var g_mobileWebLink = "http://m.cafe.naver.com/joonggonara";
+
+var g_sCafeThumbUrl = 'http://cafethumb.naver.net';
+var g_sUpcafeUrl = 'http://up.cafe.naver.com';
+var g_sCafeUrl = "http://cafe.naver.com";
+var g_sCafeImgUrl = 'http://cafeimgs.naver.net';
+var g_sCafeFileUrl = 'http://cafefiles.naver.net';
+var g_sItem2Url = 'http://item2.naver.com';
+var g_sLoginUrl = "http://nid.naver.com";
+var g_sNidHttps = 'https://nid.naver.com';
+var g_sCafeSectionUrl = "http://section.cafe.naver.com";
+var g_sNdrive = "http://ndrive.naver.com";
+var g_sKin = "http://kin.naver.com";
+var g_sLogOutReturnUrl = "http://nid.naver.com/nidlogin.login?mode=form&svctype=40960&id=&url=http://cafe.naver.com/LoginCheck.nhn?m=login";
+</script>
+
+<script type="text/javascript" src="/javascript/jindo.all.js?1335174388000"></script>
+
+<script type="text/javascript" src="/javascript/jeagleeye/JEagleEyeClient.js?1311297509000" charset="UTF-8"></script>
+
+<script type="text/javascript" src="/javascript/cafe_common.js?1331889374000"></script>
+
+<script type="text/javascript" src="/javascript/cafe_eventutil.js?1311297509000"></script>
+
+<script type="text/javascript" src="/javascript/cafe_ui.js?1329786750000"></script>
+
+<script type="text/javascript" src="/javascript/selectBoxComponent.js?1314598779000"></script>
+
+<script type="text/javascript" src="/javascript/URLEncodingMap_MS949.js?1311297509000"></script>
+
+<script type="text/javascript" src="/javascript/URLEncoder.js?1311297509000"></script>
+
+
+<script type="text/javascript" src="/javascript/cssquery.js?1311297509000"></script>
+
+<script type="text/javascript" src="/javascript/MessageBoxForJindo.js?1337594047000"></script>
+
+
+<script type="text/javascript" src="/javascript/lcslog.js?1311297509000"></script>
+
+
+<script type="text/javascript" src="/javascript/click/clickcr.js?1311297509000"></script>
+
+
+<script type="text/javascript" src="/javascript/naverme/cafe_naverme.js?1322537194000"></script>
+
+
+<script type="text/javascript" src="/javascript/favorite/favorite_cafemenu.js?1317402345000"></script>
+
+<script type="text/javascript" src="/javascript/tablet/Tablet.js?1320634356000"></script>
+
+<script type="text/javascript" src="/javascript/tablet/TabletHandler.js?1323912393000" charset="utf-8"></script>
+
+<style id="cafeCss" type="text/css"></style>
+<script type="text/javascript">
+
+var nsc = "cafe.mycafe";
+
+
+(function() {
+	var elCafeCss = $("cafeCss"),
+		elParent = parent.document.getElementById("cafeCss"),
+		re = /body[^}]*}/i, sReplace = "body {background-color:transparent}";
+	
+	if(elCafeCss.styleSheet) { //IE
+		elCafeCss.styleSheet.cssText = elParent.styleSheet.cssText.replace(re, sReplace);
+	} else {  //FF
+       var replaceString = elParent.innerHTML.replace(re, sReplace); 
+
+		try {
+			elCafeCss.innerHTML = replaceString; 
+       	} catch(e) { //Safari
+    		elCafeCss.innerText = replaceString;
+       	} 
+	}
+})();
+
+var oCL = new Ju.controlLayer({
+	onShow : function(oElement){
+		
+		parentResizeIframe('cafe_main', 'true');
+	},
+	onHide : function(){
+		
+	}
+});
+
+
+function dynamicParamLink(reqURL, event){
+	var noticeHidden = $('notice_hidden');
+
+	
+	if(event) {	
+		if(event.ctrlKey || event.metaKey) {
+			return;
+		}
+	}
+	 
+	if(noticeHidden == null) {
+		document.location.href = reqURL;
+		return false;
+	} 	
+	
+	var isNoticeClosed = $('notice_hidden').checked;
+	 
+	if(isNoticeClosed) {
+		reqURL = reqURL + "&noticeHidden=true";
+		document.location.href = reqURL ;
+		return false;
+	}
+	
+	document.location.href = reqURL;
+	return false;
+}
+
+
+function findArticleHeadListForBoardType(headid){
+    dynamicParamLink("/ArticleList.nhn?search.clubid=10050146&search.menuid=417&search.boardtype=L&userDisplay=15&search.headid=" + headid);  
+}
+
+function initHeadListLayerForQuestionAnswerBoard() {
+	var listHtml = "<ul>";
+	listHtml += "    <li><a href=\"javascript:findArticleHeadListForBoardType();\"><span>전체보기</span></a></li>";
+	
+	
+	
+	document.getElementById("headListLayer").innerHTML = listHtml;
+}
+
+var LH = new LH_create();
+window.onload = LH_exec;
+
+LH.add("parent.setTopInIframe()");
+LH.add("parentResizeIframe('cafe_main')");
+LH.add("writelcs()");
+LH.add("checkParent()");
+
+LH.add("initHeadListLayerForQuestionAnswerBoard()");
+
+function checkParent() {
+    if (parent && parent == self) {
+        document.location.href = "http://cafe.naver.com/joonggonara.cafe?iframe_url=" + document.location.href.replace(/^http:\/\/(cafe|cafe2).naver.com/gi, "").replace(/\?/gi, "%3F").replace(/&/gi,"%26");
+    }
+}
+
+checkParent();
+
+function writelcs() {
+    var code;
+
+
+  
+    
+        try{
+        	var etc = {};
+        	etc["sti"] = "cafe_article_list_market";
+        	lcs_do(etc);
+        }catch(e) {}
+    
+    
+    
+  
+  
+
+}
+	
+
+	
+function removeNotice(articleid) {
+
+}
+
+
+
+function viewMyMemberLevel() {
+	open_window("/MemberLevelView.nhn?m=mylevelview&clubid=10050146", "mylevelview", 450, 300, "");
+}
+	
+
+
+function changeBoardType(boardtype) {
+    
+    if (boardtype == 'B' || boardtype == 'W') {
+        nhn.MessageBox.alert('카페 멤버만 사용할 수 있는 메뉴입니다');
+        return;
+    }
+    
+    dynamicParamLink("/ArticleList.nhn?search.clubid=10050146&search.menuid=417&search.boardtype=" + boardtype);
+}
+
+
+function sortBy(type, e){
+  $("sortBy").value = type;
+  nhn.search.goSearch(e || window.event);
+}
+
+function findArticleHeadList(){
+    var selectedValue = document.getElementById("headSelectBox").value;
+    document.location.href = "/ArticleList.nhn?search.clubid=10050146&search.menuid=417&search.boardtype=L&userDisplay=15&search.headid=" + selectedValue;  
+}
+
+
+
+
+
+function changeListSize(display){
+	dynamicParamLink("/ArticleList.nhn?search.clubid=10050146&search.boardtype=L&search.menuid=417&search.questionTab=A&search.marketBoardTab=D&search.specialmenutype=&userDisplay=" + display);
+}
+
+
+function popupHelp(){
+    open_window("/common/editor/market_help/basic.jsp", "popupHelp", 790, 545," resizable=no");
+}
+
+
+function commentPopup(articleid, referrerall) {
+	var url = 'http://cafe.naver.com/joonggonara/' + articleid + '/comment';
+	var feature = "location=no,status=no,toolbar=no,menubar=no,resizable=yes,scrollbars=yes";
+	
+	if(referrerall != null ) {
+		openWindow(url + '?referrerAllArticles=' + referrerall, 'CommentPopup', 780, 682, feature);
+	} else {
+		openWindow(url + '?referrerAllArticles=false', 'CommentPopup', 780, 682, feature);	
+	}
+}
+</script>
+
+<meta name="decorator" content="article_list" />
+<script type="text/javascript" src="/javascript/cafe_ui.js?1329786750000"></script>
+
+
+<script type="text/javascript">
+
+var cLayer = new Ju.controlLayer();
+function alertArticleInBadMenu(evt) {
+	if(evt != "off"){
+	  	var evt = evt || window.event;
+	  	cLayer.show('restrict_layer',evt,null,null);
+  	}else if(evt=="off") cLayer.hide('restrict_layer');
+}
+
+
+function checkLogin(selection) {
+    var loginCheckUrl = "/LoginCheck.nhn?m=check";
+    var loginCheckOk = "http://cafe.naver.com/LoginCheck.nhn?m=login";
+
+    new Ajax( loginCheckUrl,
+	    {
+	        onLoad  : function(req) {
+	        	var sReqText=req.responseText.trim();
+	        	
+	            if (sReqText=="LOGOUT") {
+	           		
+					parent.document.getElementById("layerd_notice01").style.display = "none";
+					
+	           		parent.openLoginLayer();
+	                parent.document.checkFrame.location.replace("http://nid.naver.com/nidlogin.login?mode=form&svctype=40960&id=&url=" + loginCheckOk + "&pmsg=아직 게시물이 등록되지 않았습니다");
+	            } else {
+	                parent.closeLoginLayer();
+	                if(selection == 0){
+	                	changeMemberlevel();
+	                }else if(selection == 1){
+	                	moveArticles();
+	                }else if(selection == 2){
+	                	removeArticles();
+	                }else if(selection == 3){
+	                	modifyArticleHeads();
+	                }
+	            }
+	        },
+	        "timeout":2000
+	    }		
+	);
+}
+
+// 답글 수 읽어 오기
+function showReplies(clubid, articleid) {
+	var replyDiv = document.getElementById("reply_" + articleid);
+	if (replyDiv.style.display == "none") {
+		var ajax = new Ajax("/RefArticleListForSearchAll.nhn?clubid=10050146&page=1&menuid=417&boardtype=L&articleid=" + articleid, {
+			method : "GET",
+	        suspend : true,
+	        onLoad : function(req) {
+				replyDiv.innerHTML = req.responseText;    			
+				replyDiv.style.display="";
+				parentResizeIframe('cafe_main', 'true');				
+								
+	        }
+	    });
+	    ajax.request();
+	} else {
+		replyDiv.innerHTML = "";    			
+		replyDiv.style.display = "none";
+		parentResizeIframe('cafe_main', 'true');	
+	}
+}
+</script>
+
+</head>
+<body>
+
+<div id="content-area" >
+<div id="main-area" class="fl">
+
+
+
+
+
+
+
+
+
+
+
+<div id="sub-tit">
+	<h3 class="sub-tit-color only-tit">
+		
+			
+			
+			  
+			
+				<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+
+
+
+
+	
+	<a id="favorite" title="즐겨찾는 게시판 등록" href="#" onclick="setupFavoriteCafeMenu(false, 10050146, 417);clickcr(this, 'btp.fav', '', '', event);return false;" class="_rosRestrict setup"><img id="favoriteImg" width="15" height="15" class="ico_bookmark_off" alt="즐겨찾는 게시판 등록" src="http://cafeimgs.naver.net/cafe4/hidden.gif"></a>타악기
+
+	
+			
+			
+		
+	</h3>
+		
+			<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+
+<div class="me_feed">
+	<p class="dsc filter-50 m-tcol-c">이 게시판의 새글을<br><a href="#" target="_blank" onclick="popPCMe('http://me.naver.com/tab/feed/cafe.nhn'); return false;" class="m-tcol-p"><strong>네이버me</strong></a>에서 쉽게 받아 보시려면</p>
+	<div class="btn_wide"><span></span>
+		<p><strong><a href="#" onclick="subscribe();clickcr(this, 'btp.naverme', '', '', event);return false;" class="ico m-tcol-c">구독하기</a></strong></p>
+	</div>
+</div>
+
+<form name="subscriptionForm" action="/NaverMeSubscribe.nhn" method="post" target="naverme">
+	<input type="hidden" name="m" value="board">
+	<input type="hidden" name="clubid" value="10050146">
+	<input type="hidden" name="targetMenuId" value="417">
+</form>
+		
+  
+  
+
+  
+    
+  
+  
+</div>
+<div class="sub-tit-bottom"></div>
+<div class="h-20"></div>
+
+
+
+
+
+		
+
+<div class="list-tab border-sub">
+	<ul>
+		<li class="border-sub selected">
+			<p>
+				
+				<span class="ico-bl ico m-tcol-c">▼</span>
+				
+				<a class="m-tcol-c" href="#" onclick="clickcr(this, 'gdb.all','','',event); dynamicParamLink('http://cafe.naver.com/ArticleList.nhn?search.clubid=10050146&search.menuid=417&search.boardtype=L&search.marketBoardTab=D&userDisplay=15'); return false;">전체거래</a>
+			</p>
+ 		</li>
+ 		
+		<li class="border-sub noselected">
+			<p class="tab_safe">
+							
+				<a class="m-tcol-c" href="#" onclick="clickcr(this, 'gdb.safe','','',event); dynamicParamLink('http://cafe.naver.com/ArticleList.nhn?search.clubid=10050146&search.menuid=417&search.boardtype=L&search.marketBoardTab=S&userDisplay=15'); return false;">안전거래</a>
+			</p>
+		</li>
+	</ul>
+	<div class="ico_safe"></div>
+	<div class="fr">
+	  <span class="ico_lft_arr"><a onclick="clickcr(this, 'gdb.mylist','','',event);" href="/TradeHistory.nhn?search.clubid=10050146" class="m-tcol-c">내 거래내역 보기</a><span class="ico filter-50"></span></span>
+	</div>
+</div>
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+<!-- //지식iN 새질문 -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="list-style">
+  	
+	  <div class="fr m-tcol-c">
+		
+		  <div class="sub3">
+		  
+		  
+			<a href="javascript:changeBoardType('I');" class="filter-50 m-tcol-c"><img src="http://cafeimgs.naver.net/cafe4/ico-list-album.gif" width="15" height="15" alt="앨범형">앨범형</a>
+			<a href="javascript:changeBoardType('L');" class="m-tcol-c"><img src="http://cafeimgs.naver.net/cafe4/ico-list-board.gif" width="15" height="15" alt="게시판형">게시판형</a>
+		  </div>
+		  <span class="fl mt filter-30 m-tcol-c">|</span>
+		
+	    <span class="sub4 m-tcol-c">
+	      <input type="checkbox" id="notice_hidden" onclick="applyDisplayNotice();"><label for="notice_hidden">공지 숨기기</label>
+		</span>
+	  
+	    <span class="fl mt filter-30 m-tcol-c">|</span>
+		<div class="sub2">
+			<a href="#" onclick="showLayer(this, 'listSizeLayer');return false;" class="m-tcol-c sublink"><span>15</span>개씩 보기</a>
+		</div>
+	  
+	  </div>
+  </div>
+
+
+
+	
+<div class="article-board zindex6 m-tcol-c" id="upperArticleList">
+	
+	<table cellspacing="0" cellpadding="0" border="0" class="board-box">
+	
+		<col width="70"><col width="*"><col width="122"><col width="70"><col width="42">
+	
+
+
+	
+	<tr><td colspan="5" class="board-line"  style="height:3px !important; "></td></tr>
+	
+	<tr align="center" class="bg-color">
+
+	
+	<td class="p11">
+	
+	
+	</td>
+	<td class="p11">제목</td>
+	<td class="p11">작성자<span style="padding:0 52px 0 0;"></span></td>
+	<td class="p11">
+		
+		작성일
+	</td>
+	<td class="p11">조회</td>
+	
+	
+	
+	</tr>
+
+	<tr><td colspan="5" class="board-line"></td></tr>
+
+    
+
+  	
+	<tr align="center">
+  	
+	<td><img src="http://cafeimgs.naver.net/cafe4/hidden.gif" width="27" height="16" alt="안내" class="ico-list-info"></td>
+	<td align="left">
+      <span>
+  
+  	  <img src='http://cafeimgs.naver.net/levelicon/1/1_1.gif' border=0 align=absmiddle>
+	  <a href="javascript:viewMyMemberLevel();" class="m-tcol-p b _rosRestrict">중고나라회원</a> 이상 읽기가 가능한 게시판 입니다.
+  
+  
+      </span>
+    </td>
+	<td align="left"></td>
+	<td class="view-count m-tcol-c"></td>
+	<td class="view-count m-tcol-c"></td>
+	
+	</tr>
+	<tr><td colspan="5" class="board-line"></td></tr>
+
+
+
+  <tr align="center">
+    
+    <td><img src="http://cafeimgs.naver.net/cafe4/hidden.gif" width="27" height="16" alt="안내" class="ico-list-info"></td>
+    <td align="left"><span><a href="#" onclick="popupHelp()" class="m-tcol-p b">보면 볼 수록 도움이 되는 '상품거래가이드'</a></span></td>
+    <td align="left"></td>
+    <td class="view-count m-tcol-c"></td>
+    <td class="view-count m-tcol-c"></td>
+    
+  </tr>
+  <tr><td colspan="7" class="board-line"></td></tr>
+
+  
+
+	
+
+
+	
+	
+	<tr align="center" class="bg-color _noticeArticle">
+  
+	<td><img src="http://cafeimgs.naver.net/cafe4/hidden.gif" width="27" height="16" alt="공지" class="ico-list-notice"></td>
+	<td align="left" class="board-list">
+	
+		
+	
+				
+		
+		
+		
+	
+ 	 	<span class="aaa"><a href="/ArticleRead.nhn?clubid=10050146&amp;menuid=417&amp;boardtype=L&amp;page=1&amp;specialmenutype=&amp;userDisplay=15&amp;articleid=117220809" class="m-tcol-p b" onfocus="blur()">[공구]브라운오랄비 전동칫솔 공기방울 형성 -6월14일까지</a></span>
+	  	<a href="#" onclick="commentPopup(117220809);return false" class="m-tcol-p"><span class="m-tcol-p num">[<strong>50</strong>]</span></a>
+	  	
+  </td>
+	<td align="left">
+		<div class="pers_nick_area"><table cellspacing="0" summary="퍼스나콘/아이디 영역"><tr><td class="pc"><a href="http://item.naver.com/personacon/PersonaconShop.jsp?Redirect=PersonaconSub.jsp?type=itemdetail%26itemseq=2703121" target="itemshop"><img src="http://itemimgs.naver.net/personacon/21/31/s_2703121.gif" width="13" height="13" alt="" class="p-border"></a></td><td class="p-nick"><a href="#" class="m-tcol-c" onclick="ui(event, 'madecong',3,'해피콩','10050146','', 'false', 'true', 'joonggonara', 'false', '417'); return false;"><span class="wordbreak" id="top_madecong_0">해피콩<img src='http://cafeimgs.naver.net/levelicon/1/1_888.gif' width='11' height='11' alt='' class='mem-level'></span></a></td></tr></table></div><script type="text/javascript">wordBreak($("top_madecong_0"));</script>
+	</td>
+	<td class="view-count m-tcol-c">2012.06.07</td>
+	<td class="view-count m-tcol-c _rosReadcount">1684</td>
+	
+	
+	</tr>
+	<tr class="_noticeArticle"><td colspan="5" class="board-line"></td></tr>
+
+	
+	
+	<tr align="center" class="bg-color _noticeArticle">
+  
+	<td><img src="http://cafeimgs.naver.net/cafe4/hidden.gif" width="27" height="16" alt="공지" class="ico-list-notice"></td>
+	<td align="left" class="board-list">
+	
+		
+	
+				
+		
+		
+		
+	
+ 	 	<span class="aaa"><a href="/ArticleRead.nhn?clubid=10050146&amp;menuid=417&amp;boardtype=L&amp;page=1&amp;specialmenutype=&amp;userDisplay=15&amp;articleid=114922426" class="m-tcol-p b" onfocus="blur()">[알림] 매일매일 메가박스 예매권을 드립니다. </a></span>
+	  	<a href="#" onclick="commentPopup(114922426);return false" class="m-tcol-p"><span class="m-tcol-p num">[<strong>715</strong>]</span></a>
+	  	
+  </td>
+	<td align="left">
+		<div class="pers_nick_area"><table cellspacing="0" summary="퍼스나콘/아이디 영역"><tr><td class="pc"><a href="http://item.naver.com/personacon/PersonaconShop.jsp?Redirect=PersonaconSub.jsp?type=itemdetail%26itemseq=2703121" target="itemshop"><img src="http://itemimgs.naver.net/personacon/21/31/s_2703121.gif" width="13" height="13" alt="" class="p-border"></a></td><td class="p-nick"><a href="#" class="m-tcol-c" onclick="ui(event, 'madecong',3,'해피콩','10050146','', 'false', 'true', 'joonggonara', 'false', '417'); return false;"><span class="wordbreak" id="top_madecong_1">해피콩<img src='http://cafeimgs.naver.net/levelicon/1/1_888.gif' width='11' height='11' alt='' class='mem-level'></span></a></td></tr></table></div><script type="text/javascript">wordBreak($("top_madecong_1"));</script>
+	</td>
+	<td class="view-count m-tcol-c">2012.05.15</td>
+	<td class="view-count m-tcol-c _rosReadcount">12122</td>
+	
+	
+	</tr>
+	<tr class="_noticeArticle"><td colspan="5" class="board-line"></td></tr>
+
+	
+	
+	<tr align="center" class="bg-color _noticeArticle">
+  
+	<td><img src="http://cafeimgs.naver.net/cafe4/hidden.gif" width="27" height="16" alt="공지" class="ico-list-notice"></td>
+	<td align="left" class="board-list">
+	
+		
+	
+				
+		
+		
+		
+	
+ 	 	<span class="aaa"><a href="/ArticleRead.nhn?clubid=10050146&amp;menuid=417&amp;boardtype=L&amp;page=1&amp;specialmenutype=&amp;userDisplay=15&amp;articleid=91621131" class="m-tcol-p b" onfocus="blur()">[필독] 중고나라 거래금지품 & 무통보삭제 및 제재기준 변경</a></span>
+	  	
+	  	
+  </td>
+	<td align="left">
+		<div class="pers_nick_area"><table cellspacing="0" summary="퍼스나콘/아이디 영역"><tr><td class="pc"><a href="http://item.naver.com/personacon/PersonaconShop.jsp?Redirect=PersonaconSub.jsp?type=itemdetail%26itemseq=1464475" target="itemshop"><img src="http://itemimgs.naver.net/personacon/75/44/s_1464475.gif" width="13" height="13" alt="" class="p-border"></a></td><td class="p-nick"><a href="#" class="m-tcol-c" onclick="ui(event, 'nestea1',3,'더발레','10050146','', 'false', 'true', 'joonggonara', 'false', '417'); return false;"><span class="wordbreak" id="top_nestea1_2">더발레<img src='http://cafeimgs.naver.net/levelicon/1/1_888.gif' width='11' height='11' alt='' class='mem-level'></span></a></td></tr></table></div><script type="text/javascript">wordBreak($("top_nestea1_2"));</script>
+	</td>
+	<td class="view-count m-tcol-c">2011.10.06</td>
+	<td class="view-count m-tcol-c _rosReadcount">234305</td>
+	
+	
+	</tr>
+	<tr class="_noticeArticle"><td colspan="5" class="board-line"></td></tr>
+
+
+
+
+
+
+
+
+
+
+
+	</table>
+
+	<script>function showHeadListLayer() {oCL.show('headListLayer');}</script>
+	<div id="headListLayer" class="ly_sbjt" style="top:23px;left:12px">
+	</div>
+</div>
+	
+
+
+
+<div class="article-board m-tcol-c">
+<form name="ArticleList" autocomplete="off">
+  <table cellspacing="0" cellpadding="0" border="0" class="board-box" style="table-layout:fixed">
+  
+  	<col width="70"><col width="*"><col width="122"><col width="70"><col width="42">
+  
+
+    
+	
+    <tr align="center">
+
+  
+     
+      <td>
+        <span class="m-tcol-c list-count">117368465</span>
+      </td>
+   
+   
+      <td align="left" class="board-list">
+        <span>
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+      
+  
+  
+  
+  
+          <span class="aaa">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+          <a href="/ArticleRead.nhn?clubid=10050146&amp;page=1&amp;menuid=417&amp;boardtype=L&articleid=117368465&referrerAllArticles=false" onclick="return dynamicParamLink('/ArticleRead.nhn?clubid=10050146&amp;page=1&amp;menuid=417&amp;boardtype=L&articleid=117368465&referrerAllArticles=false', event);" onfocus="blur()" onmouseover="" class="m-tcol-c">카시오 디지털피아노 CDP-100 판매</a>
+  
+	  
+	  <input type="text" class="list-i-img" readonly="readonly">
+	  
+	  
+	  
+	  
+	  
+	  
+  
+  
+	  
+	  	  
+	  	
+	  	
+	  
+  
+  <input type="text" class="list-i-new" readonly="readonly">
+  
+          </span>
+             
+        </span>
+      </td>
+  
+  
+      <td align="left">
+          <div class="pers_nick_area"><table cellspacing="0" summary="퍼스나콘/아이디 영역"><tr><td class="pc"><a href="http://item.naver.com/personacon/PersonaconShop.jsp?Redirect=PersonaconSub.jsp?type=itemdetail%26itemseq=1143927" target="itemshop"><img src="http://itemimgs.naver.net/personacon/27/39/s_1143927.gif" width="13" height="13" alt="" class="p-border"></a></td><td class="p-nick"><a href="#" class="m-tcol-c" onclick="ui(event, 'wprhkd114',3,'wprhkd114','10050146','', 'false', 'true', 'joonggonara', 'false', '417'); return false;"><span class="wordbreak" id="article_wprhkd114_0">wprhkd114<img src='http://cafeimgs.naver.net/levelicon/1/1_1.gif' width='11' height='11' alt='' class='mem-level'></span></a></td></tr></table></div><script type="text/javascript">wordBreak($("article_wprhkd114_0"));</script>      
+      </td>
+  
+      <td class="view-count m-tcol-c">
+            23:23
+      </td>
+      
+      <td class="view-count m-tcol-c _rosReadcount">6</td>
+      
+      
+    </tr>
+	    
+
+        
+    
+	<tr><td colspan="5" class="board-line"></td></tr> 
+         
+    
+	
+    <tr align="center">
+
+  
+     
+      <td>
+        <span class="m-tcol-c list-count">117367296</span>
+      </td>
+   
+   
+      <td align="left" class="board-list">
+        <span>
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+      
+  
+  
+  
+  
+          <span class="aaa">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+          <a href="/ArticleRead.nhn?clubid=10050146&amp;page=1&amp;menuid=417&amp;boardtype=L&articleid=117367296&referrerAllArticles=false" onclick="return dynamicParamLink('/ArticleRead.nhn?clubid=10050146&amp;page=1&amp;menuid=417&amp;boardtype=L&articleid=117367296&referrerAllArticles=false', event);" onfocus="blur()" onmouseover="" class="m-tcol-c">최상급 중고 삼익피아노</a>
+  
+	  
+	  <input type="text" class="list-i-img" readonly="readonly">
+	  
+	  
+	  
+	  
+	  
+	  
+  
+  
+	  
+	  	  
+	  	
+	  	
+	  
+  
+  <input type="text" class="list-i-new" readonly="readonly">
+  
+          </span>
+             
+        </span>
+      </td>
+  
+  
+      <td align="left">
+          <div class="pers_nick_area"><table cellspacing="0" summary="퍼스나콘/아이디 영역"><tr><td class="pc"><a href="http://item.naver.com/personacon/PersonaconShop.jsp?Redirect=PersonaconSub.jsp?type=itemdetail%26itemseq=2703121" target="itemshop"><img src="http://itemimgs.naver.net/personacon/21/31/s_2703121.gif" width="13" height="13" alt="" class="p-border"></a></td><td class="p-nick"><a href="#" class="m-tcol-c" onclick="ui(event, 'fcprism2',3,'천하무적박지','10050146','', 'false', 'true', 'joonggonara', 'false', '417'); return false;"><span class="wordbreak" id="article_fcprism2_1">천하무적박지<img src='http://cafeimgs.naver.net/levelicon/1/1_110.gif' width='11' height='11' alt='' class='mem-level'></span></a></td></tr></table></div><script type="text/javascript">wordBreak($("article_fcprism2_1"));</script>      
+      </td>
+  
+      <td class="view-count m-tcol-c">
+            23:11
+      </td>
+      
+      <td class="view-count m-tcol-c _rosReadcount">10</td>
+      
+      
+    </tr>
+	    
+
+        
+    
+	<tr><td colspan="5" class="board-line"></td></tr> 
+         
+    
+	
+    <tr align="center">
+
+  
+     
+      <td>
+        <span class="m-tcol-c list-count">117367213</span>
+      </td>
+   
+   
+      <td align="left" class="board-list">
+        <span>
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+      
+  
+  
+  
+  
+          <span class="aaa">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+          <a href="/ArticleRead.nhn?clubid=10050146&amp;page=1&amp;menuid=417&amp;boardtype=L&articleid=117367213&referrerAllArticles=false" onclick="return dynamicParamLink('/ArticleRead.nhn?clubid=10050146&amp;page=1&amp;menuid=417&amp;boardtype=L&articleid=117367213&referrerAllArticles=false', event);" onfocus="blur()" onmouseover="" class="m-tcol-c">메트로놈( 삼익)- SDM-300 팝니다.(한번도 사용안한 AA급 새제품)</a>
+  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+  
+  
+	  
+	  	  
+	  	
+	  	
+	  
+  
+  <input type="text" class="list-i-new" readonly="readonly">
+  
+          </span>
+             
+        </span>
+      </td>
+  
+  
+      <td align="left">
+          <div class="pers_nick_area"><table cellspacing="0" summary="퍼스나콘/아이디 영역"><tr><td class="pc"><img src="http://cafeimgs.naver.net/cafe4/hidden.gif" width="13" height="13" alt="" class="p-none"></td><td class="p-nick"><a href="#" class="m-tcol-c" onclick="ui(event, 'supremo2012',3,'하늘마님','10050146','', 'false', 'true', 'joonggonara', 'false', '417'); return false;"><span class="wordbreak" id="article_supremo2012_2">하늘마님<img src='http://cafeimgs.naver.net/levelicon/1/1_1.gif' width='11' height='11' alt='' class='mem-level'></span></a></td></tr></table></div><script type="text/javascript">wordBreak($("article_supremo2012_2"));</script>      
+      </td>
+  
+      <td class="view-count m-tcol-c">
+            23:10
+      </td>
+      
+      <td class="view-count m-tcol-c _rosReadcount">9</td>
+      
+      
+    </tr>
+	    
+
+        
+    
+	<tr><td colspan="5" class="board-line"></td></tr> 
+         
+    
+	
+    <tr align="center">
+
+  
+     
+      <td>
+        <span class="m-tcol-c list-count">117367184</span>
+      </td>
+   
+   
+      <td align="left" class="board-list">
+        <span>
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+      
+  
+  
+  
+  
+          <span class="aaa">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+          <a href="/ArticleRead.nhn?clubid=10050146&amp;page=1&amp;menuid=417&amp;boardtype=L&articleid=117367184&referrerAllArticles=false" onclick="return dynamicParamLink('/ArticleRead.nhn?clubid=10050146&amp;page=1&amp;menuid=417&amp;boardtype=L&articleid=117367184&referrerAllArticles=false', event);" onfocus="blur()" onmouseover="" class="m-tcol-c">요즘이거 많이하시던데 ㅎㅎ</a>
+  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  		<a href="#" onclick="commentPopup(117367184);return false" class="m-tcol-p"><span class="m-tcol-p num">[<strong>3</strong>]</span></a>
+	  
+  
+  
+	  
+	  	  
+	  	
+	  	
+	  
+  
+  <input type="text" class="list-i-new" readonly="readonly">
+  
+          </span>
+             
+        </span>
+      </td>
+  
+  
+      <td align="left">
+          <div class="pers_nick_area"><table cellspacing="0" summary="퍼스나콘/아이디 영역"><tr><td class="pc"><img src="http://cafeimgs.naver.net/img/emot/emo12.gif" width="16" height="17" class="p-emoticon"></td><td class="p-nick"><a href="#" class="m-tcol-c" onclick="ui(event, 'wndgusdi',3,'꼬끼닭','10050146','', 'false', 'true', 'joonggonara', 'false', '417'); return false;"><span class="wordbreak" id="article_wndgusdi_3">꼬끼닭</span></a></td></tr></table></div><script type="text/javascript">wordBreak($("article_wndgusdi_3"));</script>      
+      </td>
+  
+      <td class="view-count m-tcol-c">
+            23:09
+      </td>
+      
+      <td class="view-count m-tcol-c _rosReadcount">11</td>
+      
+      
+    </tr>
+	    
+
+        
+    
+	<tr><td colspan="5" class="board-line"></td></tr> 
+         
+    
+	
+    <tr align="center">
+
+  
+     
+      <td>
+        <span class="m-tcol-c list-count">117365956</span>
+      </td>
+   
+   
+      <td align="left" class="board-list">
+        <span>
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+      
+  
+  
+  
+  
+          <span class="aaa">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+          <a href="/ArticleRead.nhn?clubid=10050146&amp;page=1&amp;menuid=417&amp;boardtype=L&articleid=117365956&referrerAllArticles=false" onclick="return dynamicParamLink('/ArticleRead.nhn?clubid=10050146&amp;page=1&amp;menuid=417&amp;boardtype=L&articleid=117365956&referrerAllArticles=false', event);" onfocus="blur()" onmouseover="" class="m-tcol-c"> 체르니 Koze-2007  전자피아노 팝니다</a>
+  
+	  
+	  <input type="text" class="list-i-img" readonly="readonly">
+	  
+	  
+	  
+	  
+	  
+	  
+  
+  
+	  
+	  	  
+	  	
+	  	
+	  
+  
+  <input type="text" class="list-i-new" readonly="readonly">
+  
+          </span>
+             
+        </span>
+      </td>
+  
+  
+      <td align="left">
+          <div class="pers_nick_area"><table cellspacing="0" summary="퍼스나콘/아이디 영역"><tr><td class="pc"><a href="http://item.naver.com/personacon/PersonaconShop.jsp?Redirect=PersonaconSub.jsp?type=itemdetail%26itemseq=1103462" target="itemshop"><img src="http://itemimgs.naver.net/personacon/62/34/s_1103462.gif" width="13" height="13" alt="" class="p-border"></a></td><td class="p-nick"><a href="#" class="m-tcol-c" onclick="ui(event, 'candy6550',3,'성현사랑','10050146','', 'false', 'true', 'joonggonara', 'false', '417'); return false;"><span class="wordbreak" id="article_candy6550_4">성현사랑<img src='http://cafeimgs.naver.net/levelicon/1/1_110.gif' width='11' height='11' alt='' class='mem-level'></span></a></td></tr></table></div><script type="text/javascript">wordBreak($("article_candy6550_4"));</script>      
+      </td>
+  
+      <td class="view-count m-tcol-c">
+            22:56
+      </td>
+      
+      <td class="view-count m-tcol-c _rosReadcount">24</td>
+      
+      
+    </tr>
+	    
+
+        
+    
+	<tr><td colspan="5" class="board-line"></td></tr> 
+         
+    
+	
+    <tr align="center">
+
+  
+     
+      <td>
+        <span class="m-tcol-c list-count">117365740</span>
+      </td>
+   
+   
+      <td align="left" class="board-list">
+        <span>
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+      
+  
+  
+  
+  
+          <span class="aaa">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+          <a href="/ArticleRead.nhn?clubid=10050146&amp;page=1&amp;menuid=417&amp;boardtype=L&articleid=117365740&referrerAllArticles=false" onclick="return dynamicParamLink('/ArticleRead.nhn?clubid=10050146&amp;page=1&amp;menuid=417&amp;boardtype=L&articleid=117365740&referrerAllArticles=false', event);" onfocus="blur()" onmouseover="" class="m-tcol-c">EMU Xboard 49 미디건반/맞춤가방 일괄판매합니다</a>
+  
+	  
+	  <input type="text" class="list-i-img" readonly="readonly">
+	  
+	  
+	  
+	  
+	  
+	  
+  
+  
+	  
+	  	  
+	  	
+	  	
+	  
+  
+  <input type="text" class="list-i-new" readonly="readonly">
+  
+          </span>
+             
+        </span>
+      </td>
+  
+  
+      <td align="left">
+          <div class="pers_nick_area"><table cellspacing="0" summary="퍼스나콘/아이디 영역"><tr><td class="pc"><a href="http://item.naver.com/personacon/PersonaconShop.jsp?Redirect=PersonaconSub.jsp?type=itemdetail%26itemseq=1468314" target="itemshop"><img src="http://itemimgs.naver.net/personacon/14/83/s_1468314.gif" width="13" height="13" alt="" class="p-border"></a></td><td class="p-nick"><a href="#" class="m-tcol-c" onclick="ui(event, 'dkanehskf1',3,'퓨리','10050146','', 'false', 'true', 'joonggonara', 'false', '417'); return false;"><span class="wordbreak" id="article_dkanehskf1_5">퓨리<img src='http://cafeimgs.naver.net/levelicon/1/1_110.gif' width='11' height='11' alt='' class='mem-level'></span></a></td></tr></table></div><script type="text/javascript">wordBreak($("article_dkanehskf1_5"));</script>      
+      </td>
+  
+      <td class="view-count m-tcol-c">
+            22:54
+      </td>
+      
+      <td class="view-count m-tcol-c _rosReadcount">5</td>
+      
+      
+    </tr>
+	    
+
+        
+    
+	<tr><td colspan="5" class="board-line"></td></tr> 
+         
+    
+	
+    <tr align="center">
+
+  
+     
+      <td>
+        <span class="m-tcol-c list-count">117364594</span>
+      </td>
+   
+   
+      <td align="left" class="board-list">
+        <span>
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+      
+  
+  
+  
+  
+          <span class="aaa">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+          <a href="/ArticleRead.nhn?clubid=10050146&amp;page=1&amp;menuid=417&amp;boardtype=L&articleid=117364594&referrerAllArticles=false" onclick="return dynamicParamLink('/ArticleRead.nhn?clubid=10050146&amp;page=1&amp;menuid=417&amp;boardtype=L&articleid=117364594&referrerAllArticles=false', event);" onfocus="blur()" onmouseover="" class="m-tcol-c">np30,dxg220-25//np31,dxg230 30에삽니다.</a>
+  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+  
+  
+	  
+	  	  
+	  	
+	  	
+	  
+  
+  <input type="text" class="list-i-new" readonly="readonly">
+  
+          </span>
+             
+        </span>
+      </td>
+  
+  
+      <td align="left">
+          <div class="pers_nick_area"><table cellspacing="0" summary="퍼스나콘/아이디 영역"><tr><td class="pc"><a href="http://item.naver.com/personacon/PersonaconShop.jsp?Redirect=PersonaconSub.jsp?type=itemdetail%26itemseq=1177466" target="itemshop"><img src="http://itemimgs.naver.net/personacon/66/74/s_1177466.gif" width="13" height="13" alt="" class="p-border"></a></td><td class="p-nick"><a href="#" class="m-tcol-c" onclick="ui(event, 'godjjio',3,'은비령','10050146','', 'false', 'true', 'joonggonara', 'false', '417'); return false;"><span class="wordbreak" id="article_godjjio_6">은비령<img src='http://cafeimgs.naver.net/levelicon/1/1_1.gif' width='11' height='11' alt='' class='mem-level'></span></a></td></tr></table></div><script type="text/javascript">wordBreak($("article_godjjio_6"));</script>      
+      </td>
+  
+      <td class="view-count m-tcol-c">
+            22:40
+      </td>
+      
+      <td class="view-count m-tcol-c _rosReadcount">5</td>
+      
+      
+    </tr>
+	    
+
+        
+    
+	<tr><td colspan="5" class="board-line"></td></tr> 
+         
+    
+	
+    <tr align="center">
+
+  
+     
+      <td>
+        <span class="m-tcol-c list-count">117363471</span>
+      </td>
+   
+   
+      <td align="left" class="board-list">
+        <span>
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+      
+  
+  
+  
+  
+          <span class="aaa">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+          <a href="/ArticleRead.nhn?clubid=10050146&amp;page=1&amp;menuid=417&amp;boardtype=L&articleid=117363471&referrerAllArticles=false" onclick="return dynamicParamLink('/ArticleRead.nhn?clubid=10050146&amp;page=1&amp;menuid=417&amp;boardtype=L&articleid=117363471&referrerAllArticles=false', event);" onfocus="blur()" onmouseover="" class="m-tcol-c">로얄 피아노팝니다!!~</a>
+  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  		<a href="#" onclick="commentPopup(117363471);return false" class="m-tcol-p"><span class="m-tcol-p num">[<strong>1</strong>]</span></a>
+	  
+  
+  
+	  
+	  	  
+	  	
+	  	
+	  
+  
+  <input type="text" class="list-i-new" readonly="readonly">
+  
+          </span>
+             
+        </span>
+      </td>
+  
+  
+      <td align="left">
+          <div class="pers_nick_area"><table cellspacing="0" summary="퍼스나콘/아이디 영역"><tr><td class="pc"><img src="http://cafeimgs.naver.net/cafe4/hidden.gif" width="13" height="13" alt="" class="p-none"></td><td class="p-nick"><a href="#" class="m-tcol-c" onclick="ui(event, 'tlsehdrbtls',3,'wjhq11','10050146','', 'false', 'true', 'joonggonara', 'false', '417'); return false;"><span class="wordbreak" id="article_tlsehdrbtls_7">wjhq11<img src='http://cafeimgs.naver.net/levelicon/1/1_110.gif' width='11' height='11' alt='' class='mem-level'></span></a></td></tr></table></div><script type="text/javascript">wordBreak($("article_tlsehdrbtls_7"));</script>      
+      </td>
+  
+      <td class="view-count m-tcol-c">
+            22:28
+      </td>
+      
+      <td class="view-count m-tcol-c _rosReadcount">30</td>
+      
+      
+    </tr>
+	    
+
+        
+    
+	<tr><td colspan="5" class="board-line"></td></tr> 
+         
+    
+	
+    <tr align="center">
+
+  
+     
+      <td>
+        <span class="m-tcol-c list-count">117362515</span>
+      </td>
+   
+   
+      <td align="left" class="board-list">
+        <span>
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+      
+  
+  
+  
+  
+          <span class="aaa">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+          <a href="/ArticleRead.nhn?clubid=10050146&amp;page=1&amp;menuid=417&amp;boardtype=L&articleid=117362515&referrerAllArticles=false" onclick="return dynamicParamLink('/ArticleRead.nhn?clubid=10050146&amp;page=1&amp;menuid=417&amp;boardtype=L&articleid=117362515&referrerAllArticles=false', event);" onfocus="blur()" onmouseover="" class="m-tcol-c">롤랜드 전자드럼 td 9k 팝니다.서울/인천 직접배달,설치 가능</a>
+  
+	  
+	  <input type="text" class="list-i-img" readonly="readonly">
+	  
+	  
+	  
+	  
+	  
+	  
+  
+  
+	  
+	  	  
+	  	
+	  	
+	  
+  
+  <input type="text" class="list-i-new" readonly="readonly">
+  
+          </span>
+             
+        </span>
+      </td>
+  
+  
+      <td align="left">
+          <div class="pers_nick_area"><table cellspacing="0" summary="퍼스나콘/아이디 영역"><tr><td class="pc"><a href="http://item.naver.com/personacon/PersonaconShop.jsp?Redirect=PersonaconSub.jsp?type=itemdetail%26itemseq=1013683" target="itemshop"><img src="http://itemimgs.naver.net/personacon/83/36/s_1013683.gif" width="13" height="13" alt="" class="p-border"></a></td><td class="p-nick"><a href="#" class="m-tcol-c" onclick="ui(event, 'satanicnouse',3,'sstopid','10050146','', 'false', 'true', 'joonggonara', 'false', '417'); return false;"><span class="wordbreak" id="article_satanicnouse_8">sstopid<img src='http://cafeimgs.naver.net/levelicon/1/1_1.gif' width='11' height='11' alt='' class='mem-level'></span></a></td></tr></table></div><script type="text/javascript">wordBreak($("article_satanicnouse_8"));</script>      
+      </td>
+  
+      <td class="view-count m-tcol-c">
+            22:17
+      </td>
+      
+      <td class="view-count m-tcol-c _rosReadcount">15</td>
+      
+      
+    </tr>
+	    
+
+        
+    
+	<tr><td colspan="5" class="board-line"></td></tr> 
+         
+    
+	
+    <tr align="center">
+
+  
+     
+      <td>
+        <span class="m-tcol-c list-count">117361580</span>
+      </td>
+   
+   
+      <td align="left" class="board-list">
+        <span>
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+      
+  
+  
+  
+  
+          <span class="aaa">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+          <a href="/ArticleRead.nhn?clubid=10050146&amp;page=1&amp;menuid=417&amp;boardtype=L&articleid=117361580&referrerAllArticles=false" onclick="return dynamicParamLink('/ArticleRead.nhn?clubid=10050146&amp;page=1&amp;menuid=417&amp;boardtype=L&articleid=117361580&referrerAllArticles=false', event);" onfocus="blur()" onmouseover="" class="m-tcol-c">SWINGS 일렉기타 하늘색 팔아요</a>
+  
+	  
+	  <input type="text" class="list-i-img" readonly="readonly">
+	  
+	  
+	  
+	  
+	  
+	  
+  
+  
+	  
+	  	  
+	  	
+	  	
+	  
+  
+  <input type="text" class="list-i-new" readonly="readonly">
+  
+          </span>
+             
+        </span>
+      </td>
+  
+  
+      <td align="left">
+          <div class="pers_nick_area"><table cellspacing="0" summary="퍼스나콘/아이디 영역"><tr><td class="pc"><a href="http://item.naver.com/personacon/PersonaconShop.jsp?Redirect=PersonaconSub.jsp?type=itemdetail%26itemseq=1120522" target="itemshop"><img src="http://itemimgs.naver.net/personacon/22/5/s_1120522.gif" width="13" height="13" alt="" class="p-border"></a></td><td class="p-nick"><a href="#" class="m-tcol-c" onclick="ui(event, 'slhee09',3,'히로','10050146','', 'false', 'true', 'joonggonara', 'false', '417'); return false;"><span class="wordbreak" id="article_slhee09_9">히로<img src='http://cafeimgs.naver.net/levelicon/1/1_1.gif' width='11' height='11' alt='' class='mem-level'></span></a></td></tr></table></div><script type="text/javascript">wordBreak($("article_slhee09_9"));</script>      
+      </td>
+  
+      <td class="view-count m-tcol-c">
+            22:07
+      </td>
+      
+      <td class="view-count m-tcol-c _rosReadcount">21</td>
+      
+      
+    </tr>
+	    
+
+        
+    
+	<tr><td colspan="5" class="board-line"></td></tr> 
+         
+    
+	
+    <tr align="center">
+
+  
+     
+      <td>
+        <span class="m-tcol-c list-count">117361457</span>
+      </td>
+   
+   
+      <td align="left" class="board-list">
+        <span>
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+      
+  
+  
+  
+  
+          <span class="aaa">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+          <a href="/ArticleRead.nhn?clubid=10050146&amp;page=1&amp;menuid=417&amp;boardtype=L&articleid=117361457&referrerAllArticles=false" onclick="return dynamicParamLink('/ArticleRead.nhn?clubid=10050146&amp;page=1&amp;menuid=417&amp;boardtype=L&articleid=117361457&referrerAllArticles=false', event);" onfocus="blur()" onmouseover="" class="m-tcol-c">야마하 디지탈피아노 판매합니다.</a>
+  
+	  
+	  <input type="text" class="list-i-img" readonly="readonly">
+	  
+	  
+	  
+	  
+	  
+	  
+  
+  
+	  
+	  	  
+	  	
+	  	
+	  
+  
+  <input type="text" class="list-i-new" readonly="readonly">
+  
+          </span>
+             
+        </span>
+      </td>
+  
+  
+      <td align="left">
+          <div class="pers_nick_area"><table cellspacing="0" summary="퍼스나콘/아이디 영역"><tr><td class="pc"><img src="http://cafeimgs.naver.net/cafe4/hidden.gif" width="13" height="13" alt="" class="p-none"></td><td class="p-nick"><a href="#" class="m-tcol-c" onclick="ui(event, 'rehic',3,'울트라세븐','10050146','', 'false', 'true', 'joonggonara', 'false', '417'); return false;"><span class="wordbreak" id="article_rehic_10">울트라세븐<img src='http://cafeimgs.naver.net/levelicon/1/1_110.gif' width='11' height='11' alt='' class='mem-level'></span></a></td></tr></table></div><script type="text/javascript">wordBreak($("article_rehic_10"));</script>      
+      </td>
+  
+      <td class="view-count m-tcol-c">
+            22:06
+      </td>
+      
+      <td class="view-count m-tcol-c _rosReadcount">46</td>
+      
+      
+    </tr>
+	    
+
+        
+    
+	<tr><td colspan="5" class="board-line"></td></tr> 
+         
+    
+	
+    <tr align="center">
+
+  
+     
+      <td>
+        <span class="m-tcol-c list-count">117360806</span>
+      </td>
+   
+   
+      <td align="left" class="board-list">
+        <span>
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+      
+  
+  
+  
+  
+          <span class="aaa">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+          <a href="/ArticleRead.nhn?clubid=10050146&amp;page=1&amp;menuid=417&amp;boardtype=L&articleid=117360806&referrerAllArticles=false" onclick="return dynamicParamLink('/ArticleRead.nhn?clubid=10050146&amp;page=1&amp;menuid=417&amp;boardtype=L&articleid=117360806&referrerAllArticles=false', event);" onfocus="blur()" onmouseover="" class="m-tcol-c">야마하 전자피아노 P-95 팝니다</a>
+  
+	  
+	  <input type="text" class="list-i-img" readonly="readonly">
+	  
+	  
+	  
+	  
+	  
+	  
+	  		<a href="#" onclick="commentPopup(117360806);return false" class="m-tcol-p"><span class="m-tcol-p num">[<strong>2</strong>]</span></a>
+	  
+  
+  
+	  
+	  	  
+	  	
+	  	
+	  
+  
+  <input type="text" class="list-i-new" readonly="readonly">
+  
+          </span>
+             
+        </span>
+      </td>
+  
+  
+      <td align="left">
+          <div class="pers_nick_area"><table cellspacing="0" summary="퍼스나콘/아이디 영역"><tr><td class="pc"><img src="http://cafeimgs.naver.net/cafe4/hidden.gif" width="13" height="13" alt="" class="p-none"></td><td class="p-nick"><a href="#" class="m-tcol-c" onclick="ui(event, 'lsh301',3,'푸테리스','10050146','', 'false', 'true', 'joonggonara', 'false', '417'); return false;"><span class="wordbreak" id="article_lsh301_11">푸테리스<img src='http://cafeimgs.naver.net/levelicon/1/1_1.gif' width='11' height='11' alt='' class='mem-level'></span></a></td></tr></table></div><script type="text/javascript">wordBreak($("article_lsh301_11"));</script>      
+      </td>
+  
+      <td class="view-count m-tcol-c">
+            21:59
+      </td>
+      
+      <td class="view-count m-tcol-c _rosReadcount">43</td>
+      
+      
+    </tr>
+	    
+
+        
+    
+	<tr><td colspan="5" class="board-line"></td></tr> 
+         
+    
+	
+    <tr align="center">
+
+  
+     
+      <td>
+        <span class="m-tcol-c list-count">117359780</span>
+      </td>
+   
+   
+      <td align="left" class="board-list">
+        <span>
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+      
+  
+  
+  
+  
+          <span class="aaa">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+          <a href="/ArticleRead.nhn?clubid=10050146&amp;page=1&amp;menuid=417&amp;boardtype=L&articleid=117359780&referrerAllArticles=false" onclick="return dynamicParamLink('/ArticleRead.nhn?clubid=10050146&amp;page=1&amp;menuid=417&amp;boardtype=L&articleid=117359780&referrerAllArticles=false', event);" onfocus="blur()" onmouseover="" class="m-tcol-c">제니오(방음장치) 설치된 야마하 피아노 싼값에 팝니다 +가격 더 많이 내렸어요</a>
+  
+	  
+	  <input type="text" class="list-i-img" readonly="readonly">
+	  
+	  
+	  
+	  
+	  
+	  
+	  		<a href="#" onclick="commentPopup(117359780);return false" class="m-tcol-p"><span class="m-tcol-p num">[<strong>1</strong>]</span></a>
+	  
+  
+  
+	  
+	  	  
+	  	
+	  	
+	  
+  
+  <input type="text" class="list-i-new" readonly="readonly">
+  
+          </span>
+             
+        </span>
+      </td>
+  
+  
+      <td align="left">
+          <div class="pers_nick_area"><table cellspacing="0" summary="퍼스나콘/아이디 영역"><tr><td class="pc"><img src="http://cafeimgs.naver.net/cafe4/hidden.gif" width="13" height="13" alt="" class="p-none"></td><td class="p-nick"><a href="#" class="m-tcol-c" onclick="ui(event, 'qkd2228',3,'귤먹어귤','10050146','', 'false', 'true', 'joonggonara', 'false', '417'); return false;"><span class="wordbreak" id="article_qkd2228_12">귤먹어귤<img src='http://cafeimgs.naver.net/levelicon/1/1_1.gif' width='11' height='11' alt='' class='mem-level'></span></a></td></tr></table></div><script type="text/javascript">wordBreak($("article_qkd2228_12"));</script>      
+      </td>
+  
+      <td class="view-count m-tcol-c">
+            21:48
+      </td>
+      
+      <td class="view-count m-tcol-c _rosReadcount">45</td>
+      
+      
+    </tr>
+	    
+
+        
+    
+	<tr><td colspan="5" class="board-line"></td></tr> 
+         
+    
+	
+    <tr align="center">
+
+  
+     
+      <td>
+        <span class="m-tcol-c list-count">117359010</span>
+      </td>
+   
+   
+      <td align="left" class="board-list">
+        <span>
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+      
+  
+  
+  
+  
+          <span class="aaa">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+          <a href="/ArticleRead.nhn?clubid=10050146&amp;page=1&amp;menuid=417&amp;boardtype=L&articleid=117359010&referrerAllArticles=false" onclick="return dynamicParamLink('/ArticleRead.nhn?clubid=10050146&amp;page=1&amp;menuid=417&amp;boardtype=L&articleid=117359010&referrerAllArticles=false', event);" onfocus="blur()" onmouseover="" class="m-tcol-c">영국제품 novation ReMOTE 25 </a>
+  
+	  
+	  <input type="text" class="list-i-img" readonly="readonly">
+	  
+	  
+	  
+	  
+	  
+	  
+  
+  
+	  
+	  	  
+	  	
+	  	
+	  
+  
+  <input type="text" class="list-i-new" readonly="readonly">
+  
+          </span>
+             
+        </span>
+      </td>
+  
+  
+      <td align="left">
+          <div class="pers_nick_area"><table cellspacing="0" summary="퍼스나콘/아이디 영역"><tr><td class="pc"><img src="http://cafeimgs.naver.net/cafe4/hidden.gif" width="13" height="13" alt="" class="p-none"></td><td class="p-nick"><a href="#" class="m-tcol-c" onclick="ui(event, 'tarzan0612',3,'타잔','10050146','', 'false', 'true', 'joonggonara', 'false', '417'); return false;"><span class="wordbreak" id="article_tarzan0612_13">타잔<img src='http://cafeimgs.naver.net/levelicon/1/1_110.gif' width='11' height='11' alt='' class='mem-level'></span></a></td></tr></table></div><script type="text/javascript">wordBreak($("article_tarzan0612_13"));</script>      
+      </td>
+  
+      <td class="view-count m-tcol-c">
+            21:40
+      </td>
+      
+      <td class="view-count m-tcol-c _rosReadcount">25</td>
+      
+      
+    </tr>
+	    
+
+        
+    
+	<tr><td colspan="5" class="board-line"></td></tr> 
+         
+    
+	
+    <tr align="center">
+
+  
+     
+      <td>
+        <span class="m-tcol-c list-count">117359007</span>
+      </td>
+   
+   
+      <td align="left" class="board-list">
+        <span>
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+      
+  
+  
+  
+  
+          <span class="aaa">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+          <a href="/ArticleRead.nhn?clubid=10050146&amp;page=1&amp;menuid=417&amp;boardtype=L&articleid=117359007&referrerAllArticles=false" onclick="return dynamicParamLink('/ArticleRead.nhn?clubid=10050146&amp;page=1&amp;menuid=417&amp;boardtype=L&articleid=117359007&referrerAllArticles=false', event);" onfocus="blur()" onmouseover="" class="m-tcol-c">KORG Micro X 판매합니다.</a>
+  
+	  
+	  <input type="text" class="list-i-img" readonly="readonly">
+	  
+	  
+	  
+	  
+	  
+	  
+  
+  
+	  
+	  	  
+	  	
+	  	
+	  
+  
+  <input type="text" class="list-i-new" readonly="readonly">
+  
+          </span>
+             
+        </span>
+      </td>
+  
+  
+      <td align="left">
+          <div class="pers_nick_area"><table cellspacing="0" summary="퍼스나콘/아이디 영역"><tr><td class="pc"><img src="http://cafeimgs.naver.net/cafe4/hidden.gif" width="13" height="13" alt="" class="p-none"></td><td class="p-nick"><a href="#" class="m-tcol-c" onclick="ui(event, 'bassnrock',3,'Eggie','10050146','', 'false', 'true', 'joonggonara', 'false', '417'); return false;"><span class="wordbreak" id="article_bassnrock_14">Eggie<img src='http://cafeimgs.naver.net/levelicon/1/1_1.gif' width='11' height='11' alt='' class='mem-level'></span></a></td></tr></table></div><script type="text/javascript">wordBreak($("article_bassnrock_14"));</script>      
+      </td>
+  
+      <td class="view-count m-tcol-c">
+            21:40
+      </td>
+      
+      <td class="view-count m-tcol-c _rosReadcount">14</td>
+      
+      
+    </tr>
+	    
+
+        
+    
+	<tr><td colspan="5" class="board-line"></td></tr> 
+         
+    
+		        
+  </table>
+  </form>
+</div>
+
+
+
+<div class="list-btn">
+
+  <div class="fr">
+
+
+
+
+
+
+
+
+	
+
+
+<!-- 질문답변 게시판인 경우 '질문하기'를, 일반 게시판인 경우에는 '글쓰기' 버튼을 보여준다 -->
+ 
+</div>
+</div>
+
+
+
+
+<form name="frmDelete" method="post" action="/ArticleDelete.nhn" style="display:none">
+<input type="hidden" name="clubid" value="10050146">
+<input type="hidden" name="menuid" value="417">
+<input type="hidden" name="boardtype" value="L">
+<input type="hidden" name="page" value="1">
+<input type="hidden" name="articleid">
+<input type="hidden" name="userDisplay" value="15">
+
+  
+
+</form>
+
+
+<form name="frmFaq" method="post" action="/QuestionFaq.nhn" style="display:none">
+<input type="hidden" name="clubid" value="10050146">
+<input type="hidden" name="menuid" value="417">
+<input type="hidden" name="boardtype" value="L">
+<input type="hidden" name="page" value="1">
+<input type="hidden" name="questionTab" value="A">
+<input type="hidden" name="articleid">
+<input type="hidden" name="userDisplay" value="15">
+<input type="hidden" name="m">
+</form>
+
+
+	
+
+<table width="100%" cellspacing="0" cellpadding="0" border="0"><tr><td class="board-line" style="height:3px !important; "></td></tr></table>
+
+
+
+<div class="prev-next">
+
+<table summary="페이지 네비게이션" class="Nnavi" align="center">
+  <tr>	
+          <td class="on"><a href="/ArticleList.nhn?search.boardtype=L&search.menuid=417&search.questionTab=A&search.clubid=10050146&search.totalCount=151&search.page=1" onclick="return dynamicParamLink('/ArticleList.nhn?search.boardtype=L&search.menuid=417&search.questionTab=A&search.clubid=10050146&search.totalCount=151&search.page=1', event)" class="m-tcol-p">1</a></td> 
+      <td><a href="/ArticleList.nhn?search.boardtype=L&search.menuid=417&search.questionTab=A&search.clubid=10050146&search.totalCount=151&search.page=2" onclick="return dynamicParamLink('/ArticleList.nhn?search.boardtype=L&search.menuid=417&search.questionTab=A&search.clubid=10050146&search.totalCount=151&search.page=2', event)" class="m-tcol-c">2</a></td>
+      <td><a href="/ArticleList.nhn?search.boardtype=L&search.menuid=417&search.questionTab=A&search.clubid=10050146&search.totalCount=151&search.page=3" onclick="return dynamicParamLink('/ArticleList.nhn?search.boardtype=L&search.menuid=417&search.questionTab=A&search.clubid=10050146&search.totalCount=151&search.page=3', event)" class="m-tcol-c">3</a></td>
+      <td><a href="/ArticleList.nhn?search.boardtype=L&search.menuid=417&search.questionTab=A&search.clubid=10050146&search.totalCount=151&search.page=4" onclick="return dynamicParamLink('/ArticleList.nhn?search.boardtype=L&search.menuid=417&search.questionTab=A&search.clubid=10050146&search.totalCount=151&search.page=4', event)" class="m-tcol-c">4</a></td>
+      <td><a href="/ArticleList.nhn?search.boardtype=L&search.menuid=417&search.questionTab=A&search.clubid=10050146&search.totalCount=151&search.page=5" onclick="return dynamicParamLink('/ArticleList.nhn?search.boardtype=L&search.menuid=417&search.questionTab=A&search.clubid=10050146&search.totalCount=151&search.page=5', event)" class="m-tcol-c">5</a></td>
+      <td><a href="/ArticleList.nhn?search.boardtype=L&search.menuid=417&search.questionTab=A&search.clubid=10050146&search.totalCount=151&search.page=6" onclick="return dynamicParamLink('/ArticleList.nhn?search.boardtype=L&search.menuid=417&search.questionTab=A&search.clubid=10050146&search.totalCount=151&search.page=6', event)" class="m-tcol-c">6</a></td>
+      <td><a href="/ArticleList.nhn?search.boardtype=L&search.menuid=417&search.questionTab=A&search.clubid=10050146&search.totalCount=151&search.page=7" onclick="return dynamicParamLink('/ArticleList.nhn?search.boardtype=L&search.menuid=417&search.questionTab=A&search.clubid=10050146&search.totalCount=151&search.page=7', event)" class="m-tcol-c">7</a></td>
+      <td><a href="/ArticleList.nhn?search.boardtype=L&search.menuid=417&search.questionTab=A&search.clubid=10050146&search.totalCount=151&search.page=8" onclick="return dynamicParamLink('/ArticleList.nhn?search.boardtype=L&search.menuid=417&search.questionTab=A&search.clubid=10050146&search.totalCount=151&search.page=8', event)" class="m-tcol-c">8</a></td>
+      <td><a href="/ArticleList.nhn?search.boardtype=L&search.menuid=417&search.questionTab=A&search.clubid=10050146&search.totalCount=151&search.page=9" onclick="return dynamicParamLink('/ArticleList.nhn?search.boardtype=L&search.menuid=417&search.questionTab=A&search.clubid=10050146&search.totalCount=151&search.page=9', event)" class="m-tcol-c">9</a></td>
+      <td><a href="/ArticleList.nhn?search.boardtype=L&search.menuid=417&search.questionTab=A&search.clubid=10050146&search.totalCount=151&search.page=10" onclick="return dynamicParamLink('/ArticleList.nhn?search.boardtype=L&search.menuid=417&search.questionTab=A&search.clubid=10050146&search.totalCount=151&search.page=10', event)" class="m-tcol-c">10</a></td>
+      <td class="pgR"><a href="/ArticleList.nhn?search.boardtype=L&search.menuid=417&search.questionTab=A&search.clubid=10050146&search.totalCount=151&search.page=11" onclick="return dynamicParamLink('/ArticleList.nhn?search.boardtype=L&search.menuid=417&search.questionTab=A&search.clubid=10050146&search.totalCount=151&search.page=11', event)" class="m-tcol-c pn"><span>다음</span><span class="ico-bl ico">▶</span></a></td> 
+  </tr>
+</table>      
+</div>
+
+	
+
+<iframe name="wordchk" id="wordchk" width=0 height=0 frameborder=0 style="display:none"></iframe>
+
+<div class="list-search">
+<form name="frmSearch" action="" onsubmit="return false;">
+  
+  <select name="searchdate" id="searchdate" class="m-tcol-c" onchange="$('query').focus();" style="display:none;">
+    <option value="all" selected>전체기간</option>
+    <option value="1d" >1일</option>
+    <option value="1w" >1주</option>
+    <option value="1m" >1개월</option>
+    <option value="6m" >6개월</option>
+    <option value="1y" >1년</option>
+    <option value="2012-03-082012-06-08" >#period</option>
+  </select>
+  <select id="searchBy" name="searchBy" class="m-tcol-c" onchange="$('query').focus();" style="width:110px;display:none;">
+    
+    <option value="1" >제목만</option>
+    <option value="3" >글작성자</option>
+    <option value="4" >덧글내용</option>
+    <option value="5" >덧글작성자</option>     
+  </select>
+  <input type="text" id="query" name="query" style="ime-mode:active" value="" onkeydown="if (event.keyCode == 13) {nhn.search.goSearch(event);}" class="m-tcol-c border-sub text">
+  <a href="#" onclick="nhn.search.goSearch(event);return false;"><img src="http://cafeimgs.naver.net/cafe4/hidden.gif" width="42" height="21" alt="검색" class="btn-search-green"></a>
+</form>
+
+
+
+
+ 
+<ul style="display: none; left: 715px; z-index: 1000; top: 128px;" class="layer_box border-sub bg-color" name="listSizeLayer" id="listSizeLayer"> 
+  
+    <li ><a href="#" onclick="changeListSize(5);return false;" class="m-tcol-c"><span>5</span>개씩</a></li>
+  
+    <li ><a href="#" onclick="changeListSize(10);return false;" class="m-tcol-c"><span>10</span>개씩</a></li>
+  
+    <li class="selected"><a href="#" onclick="changeListSize(15);return false;" class="m-tcol-p"><span>15</span>개씩</a></li>
+  
+    <li ><a href="#" onclick="changeListSize(20);return false;" class="m-tcol-c"><span>20</span>개씩</a></li>
+  
+    <li ><a href="#" onclick="changeListSize(30);return false;" class="m-tcol-c"><span>30</span>개씩</a></li>
+  
+    <li ><a href="#" onclick="changeListSize(40);return false;" class="m-tcol-c"><span>40</span>개씩</a></li>
+  
+    <li ><a href="#" onclick="changeListSize(50);return false;" class="m-tcol-c"><span>50</span>개씩</a></li>
+  
+</ul>
+
+ 
+<ul id="oLayer"></ul>
+
+</div>
+
+
+<div style="height: 170px;">&nbsp;</div>
+
+
+
+
+<div id="restrict_layer" class="restrict" style="left:200px; top:300px; display:none;">
+	<p><strong>접근 제한중</strong>인 게시판의 게시글입니다.</p>
+	<span class="shadow shadow1"></span><span class="shadow shadow2"></span><span class="shadow shadow3"></span>
+</div>
+
+</div></div>
+<br>
+<br>
+<br>
+<br>
+
+
+<div class="worn_layer_popup" style="width:360px; top:350px; left:10px; display:none;" id="MessageBoxLayer">
+	<!-- PNG Gradation -->
+	<div class="shadow1">
+		<div class="shadow1_side">
+			<div class="shadow2">
+				<div class="shadow2_side">
+					<div class="border_type">
+						<!-- 콘텐트 -->
+						<div class="content">
+							<div class="_contentMessage"></div>
+							<div class="btn_box nomargin">
+								<a class="_btnClose" href="#"><img src="http://cafeimgs.naver.net/cafe4/btn_close2.gif" width="38" height="21" alt="닫기"></a>
+								<a class="_btnConfirm" href="#"><img src="http://cafeimgs.naver.net/cafe4/btn_confirm6.gif" width="38" height="21" alt="확인"></a>
+								<a class="_btnCancel" href="#"><img src="http://cafeimgs.naver.net/cafe4/btn_cancel.gif" width="38" height="21" alt="취소"></a>
+							</div>
+						</div>
+						<a class="_btnExit closelayer" href="#BtnCLose"><img src="http://static.naver.net/book/publishingcompany/btn_close.gif" alt="닫기" width="15" height="14"></a>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+</div>
+ 	
+
+<form name="pwmForm" method="POST" action="" target="">
+    <input type="hidden" name="ugcTypeName" value=""/>
+    <input type="hidden" name="prohibitWords" value=""/>
+</form>
+<form name="boardNoticeRemoveFrm" action="/BoardNoticeUpdate.nhn" method="post">
+	<input type="hidden" name="articleid" value=""/>
+</form>     
+
+
+
+<div class="ly2_help _ly2_help" style="display:none;width:247px;top:103px;left:28px">
+	<p>입력한 단어를 모두 포함한 문서를 검색합니다.<br>&amp;연산자를 이용하면 검색창에서 동일 기능을<br>사용할 수 있습니다.</p>
+	<a href="#" class="clse"><img src="http://static.naver.net/kin/09renewal/btn_close_layer.gif" alt="닫기" width="19" height="19"></a>
+	<div class="edge_cen" style="margin-left:6px"></div>
+</div>
+
+
+<div class="ly2_help _ly2_help" style="display:none;width:247px;top:103px;left:190px">
+	<p>입력한 단어를 포함한 문서를 제외하고<br>검색합니다. !연산자를 이용하면 검색창에서<br> 동일 기능을 사용할 수 있습니다.</p>
+	<a href="#" class="clse"><img src="http://static.naver.net/kin/09renewal/btn_close_layer.gif" alt="닫기" width="19" height="19"></a>
+	<div class="edge_cen" style="margin-left:6px"></div>
+</div>
+
+
+<div class="ly2_help _ly2_help" style="display:none;width:247px;top:103px;left:352px">
+	<p>입력한 단어들 중 하나 이상을 포함한 모든<br>문서를 검색합니다. |연산자를 이용하면<br>검색창에서 동일 기능을 사용할 수 있습니다.</p>
+	<a href="#" class="clse"><img src="http://static.naver.net/kin/09renewal/btn_close_layer.gif" alt="닫기" width="19" height="19"></a>
+	<div class="edge_cen" style="margin-left:6px"></div>
+</div>
+
+
+<div class="ly2_help _ly2_help" style="display:none;width:264px;top:103px;left:504px">
+	<p>입력한 어절&middot;어구와 정확히 일치하는 부분을<br>포함한 문서만 검색합니다. 큰따옴표(&quot; &quot;)연산자를<br>이용하면 검색창에서 동일 기능을 사용할 수 있습니다.</p>
+	<a href="#" class="clse"><img src="http://static.naver.net/kin/09renewal/btn_close_layer.gif" alt="닫기" width="19" height="19"></a>
+	<div class="edge_cen" style="margin-left:7px"></div>
+</div>
+
+
+<script type="text/javascript" src="/javascript/cafe_search.js?1314598779000"></script>
+
+<script type="text/javascript">
+
+nhn.search.init(false, "http://cafe.naver.com", 10050146, 15, false, 417);
+
+
+
+
+
+function showLayer(obj, layerName){
+	var pos = Element.realPos(obj);
+	var elLayer = $(layerName);
+
+	oCL.show(layerName);
+	if( elLayer.style.display != 'none' ) {
+		elLayer.style.top = (pos.top + 14 ) + 'px';
+		elLayer.style.left = (pos.left - 8 ) + 'px';
+	}
+}
+
+
+function applyDisplayNotice()
+{
+	var isNoticeClosed = $('notice_hidden').checked;
+	
+	toggleDisplayNotice(isNoticeClosed);
+}
+
+
+function toggleDisplayNotice(isNoticeClosed) {
+	var upperArticleListArea = $('upperArticleList');
+	
+	if(isNoticeClosed) {		
+		var elements = cssquery("._noticeArticle", upperArticleListArea);
+		var noticeCount = elements.length;
+		for(i=0; i < noticeCount ; i++) {
+			var obj = elements[i];
+			if(obj != null) {
+				 obj.style.display = "none";
+			}
+		}
+	} else {
+		var elements = cssquery("._noticeArticle", upperArticleListArea);
+		var noticeCount = elements.length;
+		for(i=0; i < noticeCount ; i++) {
+			var obj = elements[i];
+			if(obj != null) {
+				 obj.style.display = "";
+			}
+		}
+	}
+}
+
+
+function initDisplayNotice() {
+	var noticeHidden = $('notice_hidden');
+
+	//공지 숨기기 버튼 존재하지 않는지 valid check
+	if(noticeHidden == null || typeof noticeHidden == "undefined") {
+		return;
+	} 
+
+	//noticeHidden 은 현재 레이아웃을 사용하는 Action에 정의되어야 한다. 
+	if(false) {
+		$('notice_hidden').checked = true;
+	}else{
+		$('notice_hidden').checked = false;
+	}
+	toggleDisplayNotice(false);
+}
+
+LH.add(initDisplayNotice());
+
+
+
+
+(function() {
+	Event.register(window, "load", function() {
+		Tablet.editing.ClickAlert()
+			.check({
+				bAccessTabletPC : false,
+				bReadOnlyStatus : false,
+				bMarketBoard : true,
+				bHasArticleForm : true,
+				bHasTemplate : false
+			})
+			.click("writeFormBtn").run(function() {
+				writeArticle();
+			})
+			.click(cssquery("a[name=modifyLink]")).run(function() {
+				// empty
+			});
+	});
+})();
+
+var bTablet = false;
+var oTabletHandler = new TabletHandler(bTablet);
+
+</script>
+
+
+
+<link rel="stylesheet" href="/css/ip_layer_2.css?1337594047000" type="text/css">
+
+
+<script type="text/javascript">
+	function openLoginLayer() {
+		var loginCheckOk = "http://cafe.naver.com/LoginCheck.nhn?m=login";
+		checkFrame.location.replace("http://nid.naver.com/nidlogin.login?mode=form&svctype=40960&id=&url="+loginCheckOk);
+
+		
+		var layerScrollTop = parent.document.getElementsByTagName('HTML')[0].scrollTop;
+        var layerClientHeight = parent.document.getElementsByTagName('HTML')[0].clientHeight;
+        var layerPosition = layerScrollTop + (layerClientHeight * 0.5);
+        document.getElementById("login_layer").style.top = layerPosition + "px";
+        
+		document.getElementById("login_layer_bg").style.display = "";
+		document.getElementById("login_layer").style.display = "";
+    	document.getElementById("login_layer").focus();		
+	}
+
+	function closeLoginLayer() {
+		document.getElementById("login_layer_bg").style.display = "none";
+	    document.getElementById("login_layer").style.display = "none";
+	}
+</script>
+<div id="login_layer_bg" style="z-index:100;display:none;position:absolute;width:100%;height:3800px;top:0px;left:0px;background-color:GRAY;filter:alpha(opacity=20);-moz-opacity:0.2;">
+  <iframe id="login_layer_bg_iframe" frameborder="0" style="position:absolute;top:0px;left:0px;width:100%;height:3800px;background-color:GRAY;filter:alpha(opacity=20);-moz-opacity:0.2;"></iframe>
+</div>
+<div id="login_layer" class="layerpopup" style="z-index:1001; width:394px; top:400px; left:35%; display:none;">
+  <div class="shadow1">
+  <div class="shadow1_side">
+		<div class="shadow2">
+        <div class="shadow2_side">
+			<div class="shadow3">
+	        <div class="shadow3_side">
+               
+			<div class="border_type">
+				<div class="logbox_wrap">
+
+					<p class="notice">회원님의 안전한 서비스 이용을 위해 <strong>비밀번호를 확인해 주세요.</strong></p>
+
+	           		<p class="notice02" id="layerd_notice01" style="display:none;">IP가 자주 변경되는 네트워크 환경에서 로그인하는 경우 <br><strong>IP보안을 해제</strong> 후 이용하시기 바랍니다.</p>
+					<p class="notice02">다시 한번 <strong>비밀번호 확인</strong> 하시면 이용중인 화면으로 돌아가며, 작성 중이던<br>내용을 정상적으로 전송 또는 등록하실 수 있습니다.</p>
+	
+					<a href="javascript:closeLoginLayer();" class="closelayer"><img src="http://static.naver.net/ws/btn_close.gif" alt="닫기" width="15" height="14"></a>
+	           		<div class="frame_wrap type03"><iframe id="checkFrame" name="checkFrame" width="350" height="163" frameborder="0"  scrolling="no" marginheight="0" marginwidth="0" ></iframe></div>
+	
+				</div>
+			</div>
+			
+          	</div>
+			</div>
+        </div>
+		</div>
+  </div>
+  </div>
+</div>
+</body>
+</html>
